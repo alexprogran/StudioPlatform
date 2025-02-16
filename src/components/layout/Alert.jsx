@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaCheck } from 'react-icons/fa';
-// import styles from './Alert.module.css';
+import styles from './Alert.module.css';
 import PropTypes from 'prop-types';
 
 function Alert({msg,type}) {
