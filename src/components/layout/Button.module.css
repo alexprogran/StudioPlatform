@@ -1,0 +1,12 @@
+.btn {
+    padding: 0.5em 1em;
+    background-color: rgb(7, 60, 220);
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+}   
+
+.btn:hover {
+    background-color: rgb(5, 34, 122);
+    color: #fbfbfb;
+}

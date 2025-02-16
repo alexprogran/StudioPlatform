@@ -1,0 +1,20 @@
+.scheduling_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.scheduling_container h1 {
+    margin-bottom: 1em;
+}
+
+
+
+.scheduling_container .msg {
+    position: absolute;
+    right: 0;
+    margin: 1em 3em;
+}

@@ -1,0 +1,11 @@
+.btn {
+    background-color: #222;
+    padding: 0.7em 5em;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover{
+    background-color: blue;
+}

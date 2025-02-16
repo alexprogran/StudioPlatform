@@ -1,0 +1,14 @@
+.footer  {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.footer li {
+    margin-right: 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+

@@ -1,0 +1,17 @@
+.projectLogo_container { 
+display: flex;
+margin: 1em 0 1.5em;
+height: 4em;
+
+}
+
+.projectLogo_container span{
+    color: rgb(7, 60, 220);
+}   
+
+.projectLogo_container h1 {
+    font-size: 3em;
+}
+
+
+

@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open sans', sans-serif; /* Open Sans -fonte retirada do google */   
+}
+
+html,
+body,
+#root {
+  background-color: #e1e2f0;
+  height: 100%;
+}

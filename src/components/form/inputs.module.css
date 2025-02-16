@@ -1,0 +1,17 @@
+.inputs_container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+}
+
+.inputs_container label{
+    padding-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.inputs_container input{
+    padding: .7em;
+    border: none;
+   
+}
+
