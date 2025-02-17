@@ -6,18 +6,16 @@ import PropTypes from 'prop-types';
 function Alert({msg,type}) {
     
     const [visible, setVisible] = useState(false)
-    const [action, setAction] = useState('visible')
+    const [action, setAction] = useState('invisible')
     
     useEffect(() => {
-        setVisible(true); // Garante que o alerta aparecerá
-        console.log(visible)
-        console.log(action)
-    
+        setVisible(true);    
         const timer = setTimeout(() => {
-            setAction('invisible');
-            // setVisible(false)
-        },1000); // Define o tempo que o alerta ficará visível
-        console.log('Estado de visible: ', action)
+            setAction('visible'); 
+                setTimeout(() => {
+                    setAction('invisible')
+                },2100)      
+        },100);       
         return () => clearTimeout(timer);
        
     },[visible]);

@@ -3,10 +3,10 @@
     margin: 2em 0;
 }
 
-.alert {
-  
+.alert {  
+    margin: 0;
+    padding: 0;
+    right:-318px;
     position: absolute;
-    right: 0;
     margin: 1em 1em;
-    
 }
