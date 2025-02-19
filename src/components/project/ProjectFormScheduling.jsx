@@ -5,6 +5,7 @@ import Select from '../form/Select';
 import styles from './ProjectFormScheduling.module.css';
 import Button from '../form/Button';
 import Alert from '../layout/Alert';
+import Reagend from './reagend';
 
 function ProjectFormScheduling({schedulingData}) {
 
@@ -76,46 +77,53 @@ function ProjectFormScheduling({schedulingData}) {
         <Alert msg='Sucesso no sue agendamento!' type='success' />
     </div>
     }
-    
+    <div className={styles.container}>
     <form className={styles.form_container} onSubmit={submit}>
         
-    <Inputs 
-        name='date'
-        type='date'
-        text='Informe a data'
-        handleOnChange={handleOnChange}   
-        value={scheduling.date || ""}      
-        />
-
         <Inputs 
-        name='time'
-        type='time'
-        text='Informe o horário'
-        handleOnChange={handleOnChange}
-        value={scheduling.time || ""}
-        />
-        <Inputs 
-        name='profissional'
-        type='text'
-        text='Informe o profissional'
-        placeholder='Seu profissional'
-        handleOnChange={handleOnChange}
-        value={scheduling.profissional || ""}
-        />
+            name='date'
+            type='date'
+            text='Informe a data'
+            handleOnChange={handleOnChange}   
+            value={scheduling.date || ""}      
+            />
+    
+            <Inputs 
+            name='time'
+            type='time'
+            text='Informe o horário'
+            handleOnChange={handleOnChange}
+            value={scheduling.time || ""}
+            />
+            <Inputs 
+            name='profissional'
+            type='text'
+            text='Informe o profissional'
+            placeholder='Seu profissional'
+            handleOnChange={handleOnChange}
+            value={scheduling.profissional || ""}
+            />
+    
+            <Select
+            text='Nosso serviços:'
+            name='service'
+            options={services}
+            handleOnChange={handleSelect}  
+            value={scheduling.service || ""} 
+            />
+    
+            <Button 
+            type='submit'
+            text='Agendar'
+            />
+        </form>
+        <div className={styles.container_reagente}>
+        <Reagend />
+        </div>
 
-        <Select
-        text='Nosso serviços:'
-        name='service'
-        options={services}
-        handleOnChange={handleSelect}  
-        value={scheduling.service || ""} 
-        />
-
-        <Button 
-        type='submit'
-        text='Agendar'
-        />
-    </form>
+       
+    </div>
+   
     </>
 }
 export default ProjectFormScheduling
