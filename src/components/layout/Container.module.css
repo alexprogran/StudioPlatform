@@ -1,8 +1,7 @@
 .container{
     padding: 0;
     display: flex;
-    width: 100%;
-    margin: 0;
+    width: 100%;    
 }
 
 .content-center {
@@ -14,7 +13,7 @@
 }
 
 .border-top {
-    border-top: 1px solid rgb(178, 178, 249);    
+    border-top: 1px solid rgb(182, 125, 39);    
 }
 
 .min-height{

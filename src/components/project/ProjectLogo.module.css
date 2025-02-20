@@ -5,8 +5,12 @@ height: 4em;
 
 }
 
+.projectLogo_container h1 {
+    color: #fff;
+}
+
 .projectLogo_container span{
-    color: rgb(7, 60, 220);
+    color: rgb(255, 155, 0);
 }   
 
 .projectLogo_container h1 {

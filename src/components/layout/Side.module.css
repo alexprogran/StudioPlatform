@@ -4,7 +4,7 @@
     position: absolute;
     width: 5%;
     height: 90vh;
-    border: 1px solid rgb(178, 178, 249);
+    border-right: 1px solid rgb(182, 125, 39);
     border-top: none;
     
 }
@@ -18,7 +18,7 @@
     margin-top: 3em;
     font-size: 1.5em;
     cursor: pointer;
-    color: rgb(98, 93, 93);
+    color: rgb(255, 155, 0);
 
     transition: transform 0.3s ease;
 }
