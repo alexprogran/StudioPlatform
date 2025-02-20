@@ -8,25 +8,85 @@
       "service": "coter"
     },
     {
-      "id": "58f6"
-    }
-  ],
-  "services": [
-    {
-      "id": "1",
-      "name": "coter"
+      "id": "b6eb"
     },
     {
-      "id": "2",
-      "name": "manicure"
+      "id": "1c77"
     },
     {
-      "id": "3",
-      "name": "pedicure"
+      "id": "6897"
     },
     {
-      "id": "4",
-      "name": "depilação"
+      "id": "0925"
+    },
+    {
+      "id": "6460"
+    },
+    {
+      "id": "525b"
+    },
+    {
+      "id": "432c"
+    },
+    {
+      "id": "4a80"
+    },
+    {
+      "id": "7ce5"
+    },
+    {
+      "id": "0f98"
+    },
+    {
+      "id": "e6d2"
+    },
+    {
+      "id": "a53b"
+    },
+    {
+      "id": "8c65"
+    },
+    {
+      "id": "72f4"
+    },
+    {
+      "id": "07fa"
+    },
+    {
+      "id": "0ced"
+    },
+    {
+      "id": "bd3a"
+    },
+    {
+      "id": "6834"
+    },
+    {
+      "id": "7790"
+    },
+    {
+      "id": "7a48"
+    },
+    {
+      "id": "3bf0"
+    },
+    {
+      "id": "049e"
+    },
+    {
+      "id": "4be4"
+    },
+    {
+      "id": "547e"
+    },
+    {
+      "id": "039c"
+    },
+    {
+      "id": "6ff0"
+    },
+    {
+      "id": "35d4"
     }
   ],
   "data_user": [
@@ -35,6 +95,9 @@
       "name": "Laura Loudes",
       "phone": "1234567",
       "email": "lauraloudes@email.com"
+    },
+    {
+      "id": "46a1"
     }
   ],
   "categoria": [

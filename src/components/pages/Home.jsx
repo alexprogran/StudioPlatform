@@ -1,17 +1,27 @@
-import style from './Home.module.css';
+import styles from './Home.module.css';
 import Container from '../layout/Container';
-import Button from '../layout/Button';
+// import Button from '../layout/Button';
 import ProjectLogo from '../project/ProjectLogo';
+// import img from '../../img/salao-de-beleza.jpg';
 
 function Home() {
    
     return <>
    <Container customClass='content-center'>
-        <div className={style.home}>            
+        <div className={styles.home}>            
             <ProjectLogo />
-            <Button to='/contact' text='Deixe seu contato' />
+            {/* <Button to='/contact' text='Deixe seu contato' /> */}
+            <div className={styles.img_container}>
+            <img className={styles.img} src="img/salao-de-beleza.jpg" alt="" />
+            <img className={styles.img} src='img/images.jpg' alt="Imagem salão" />
+            <img className={styles.img} src="img/pedicure.jpg" alt="" />
+
+            </div>
+            
+          
+          
         </div>
    </Container>
     </>
 }
-export default Home
+export default Home 
