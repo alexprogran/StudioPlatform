@@ -1,6 +1,33 @@
 {
   "scheduling": [
-   
+    {
+      "id": "791b",
+      "date": "2025-02-19",
+      "time": "19:26",
+      "profissional": "Wesley",
+      "service": "coter"
+    },
+    {
+      "id": "58f6"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "coter"
+    },
+    {
+      "id": "2",
+      "name": "manicure"
+    },
+    {
+      "id": "3",
+      "name": "pedicure"
+    },
+    {
+      "id": "4",
+      "name": "depilação"
+    }
   ],
   "data_user": [
     {

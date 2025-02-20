@@ -4,7 +4,7 @@
 }
 
 .alert {  
-    margin: 0;
+    margin: 0; 
     padding: 0;
     right:-318px;
     position: absolute;
@@ -19,8 +19,7 @@
     width: 100%    
 }
 
-.container_reagente {
-    /* border: 1px solid red; */
+.card_container {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -29,9 +28,14 @@
     width: 35%;
     height: 70%;
     top: 0;
-    right: 0;
-    margin: 1em;
-    padding: 1em;
+    transform: translateX(200%);
+    margin-top: 3em;
+    padding: 0;
+    transition: transform 0.9s ease-in-out;
    
 }
 
+.open {
+    transform: translateX(87%);
+    transition: transform 0.9s ease-in-out
+}

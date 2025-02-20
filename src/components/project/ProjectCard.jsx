@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { FaCheck } from 'react-icons/fa';
 import Button from '../form/Button';
-import styles from './Reagend.module.css';
+import styles from './ProjectCard.module.css';
 import PropTypes from 'prop-types';
 
 
@@ -23,8 +23,8 @@ function Reagend()  {
 
    },[])
     return <>
-       <div className={styles.reagend_container}>
-       <h1>Agendamento ralizado!</h1>
+       <div className={styles.card_container}>
+        <h2>Seu agendameto</h2>
        <div className={styles.list} >
        <ul>
         {scheduling.map((data) => (
@@ -38,12 +38,17 @@ function Reagend()  {
        </ul>
        </div>
        <p>Eviamos o seu agendamento para: <span>edenreço@email.com</span> </p>
-       <div className={styles.button_icons}>
-            <div className={styles.icons}>
+       <div className={`${styles.button_icons} `}>
+            <div className={`${styles.icons} ${styles.icon_float}`}>
                 <FaCheck /> 
             </div>
-            <Button type='submit' text='Reagendamento' />
-       </div>
+           
+            <Button  type='submit' text='Reagendamento' />
+            
+           
+           
+            </div>
+            
        </div>
     </>
 }

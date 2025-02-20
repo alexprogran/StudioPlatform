@@ -5,13 +5,15 @@ import Select from '../form/Select';
 import styles from './ProjectFormScheduling.module.css';
 import Button from '../form/Button';
 import Alert from '../layout/Alert';
-import Reagend from './reagend';
+import Card from './ProjectCard';
 
 function ProjectFormScheduling({schedulingData}) {
 
     const [services, setServices] = useState([])
     const [scheduling, setScheduling] = useState(schedulingData || {})
     const [message, setMessage] = useState(false)
+    const [card, setCard] = useState('')
+
 
     useEffect(() =>{
         fetch('http://localhost:5000/services',{
@@ -59,13 +61,16 @@ function ProjectFormScheduling({schedulingData}) {
     function submit(e){
         e.preventDefault()
         createPost(scheduling)
-        setMessage(true)     
+        setMessage(true)  
+        setCard('open')
     }  
 
     useEffect(() => {
         if(message){
             setTimeout(() => {
                 setMessage(false)
+                
+                
             },3000)
         }
     },[message])
@@ -117,11 +122,10 @@ function ProjectFormScheduling({schedulingData}) {
             text='Agendar'
             />
         </form>
-        <div className={styles.container_reagente}>
-        <Reagend />
+        <div className={`${styles.card_container} ${card ==='open' ? styles.open:'' }`}>
+            <Card />
         </div>
-
-       
+        
     </div>
    
     </>
