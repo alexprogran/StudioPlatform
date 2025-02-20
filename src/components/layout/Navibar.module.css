@@ -1,5 +1,5 @@
 .container {
-color: rgb(178, 178, 249);
+color: rgb(255, 115, 0);
 }
 
 .navibar {
@@ -15,6 +15,7 @@ color: rgb(178, 178, 249);
     .navibar ul {
     display: flex;
     list-style: none;
+
      
 }
 
@@ -26,18 +27,18 @@ color: rgb(178, 178, 249);
 
 .navibar ul a{
     text-decoration: none;
-    color: rgb(98, 93, 93);
+    color: rgb(253, 128, 18);
 }    
 
 
-
+/* 
 .navibar ul a:hover {
     
     color: #ffff;
     background-color: rgb(98, 98, 93);
     border-radius: 10%;
 
-}
+} */
 
 
 

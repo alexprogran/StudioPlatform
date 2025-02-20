@@ -15,6 +15,6 @@ function Navibar() {
        </ul>
   </nav>
   
-    </>
+    </> 
 }
 export default Navibar
