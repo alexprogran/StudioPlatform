@@ -7,6 +7,9 @@
 .inputs_container label{
     padding-bottom: 0.2em;
     font-weight: bold;
+    color: rgb(255, 155, 0);
+    font-weight: 200;
+
 }
 
 .inputs_container input{

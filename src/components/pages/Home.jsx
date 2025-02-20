@@ -12,9 +12,9 @@ function Home() {
             <ProjectLogo />
             {/* <Button to='/contact' text='Deixe seu contato' /> */}
             <div className={styles.img_container}>
-            <img className={styles.img} src="img/salao-de-beleza.jpg" alt="" />
-            <img className={styles.img} src='img/images.jpg' alt="Imagem salão" />
-            <img className={styles.img} src="img/pedicure.jpg" alt="" />
+            <img className={styles.img} src="img/salao-de-beleza.jpg" alt="Imagem salão" />
+            <img className={styles.img} src='img/images.jpg' alt="Imagem corte cabelo" />
+            <img className={`${styles.img} ${styles.manicure}`} src="img/pedicure.jpg" alt="Imagem manicure" />
 
             </div>
             

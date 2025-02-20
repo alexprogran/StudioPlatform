@@ -1,6 +1,7 @@
 .btn{
-    padding: .7em 1.2em;
-    background-color: rgb(7, 60, 220);
+    margin-top: 0.5em;
+    padding: .7em 9.5em;
+    background-color: rgb(253, 128, 18);   
     color: #FFF;
     border-radius: 5%;
     border: none;
@@ -9,5 +10,6 @@
 }
 
 .btn:hover {
-    background-color: black;
+    background-color: #FFF;
+    color:  rgb(253, 128, 18);
 }

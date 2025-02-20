@@ -13,14 +13,14 @@ function Scheduling() {
        <Container customClass='content-center'>
         <div className={styles.scheduling_container}> 
             <ProjectLogo /> 
-            <h1>Realize seu agendamento!</h1>      
+            <h2>Realize seu agendamento!</h2>      
             <ProjectFormScheduling />
         
         </div>
 
        </Container>
     
-    </>
+    </> 
 } 
 export default Scheduling
 

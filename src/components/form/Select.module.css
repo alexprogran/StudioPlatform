@@ -5,8 +5,9 @@
 }
 
 .select_container label {
-    font-weight: bold;
-    margin-bottom: .6em;
+    font-weight: 200;
+    margin-bottom: .4em;
+    color: rgb(255, 155,  0);
 }
 
 .select_container select{
