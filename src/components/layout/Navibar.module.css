@@ -5,7 +5,11 @@
     align-items: center;
     width: 100%;
     height:12%;
-    padding: 0;
+    padding: 0;   
+}
+
+.open {
+    transform: translateX(0);
 }
 
 .navibar {   
@@ -16,7 +20,7 @@
     height: 12%;    
 } 
 
-    .navibar ul {
+.navibar ul {
     display: flex;
     list-style: none;     
 }
@@ -50,5 +54,23 @@
     color: #fff;
 }
 
+.sidebar_moble {
+    position:absolute;
+    left: 0;
+    margin-bottom: 0;
+    width: 12%;
+    height: 70vh;
+    padding: 0;
+    top: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    z-index: 1  
+   
+}
+.open {
+transform: translateX(0);
+transition: transform 0.5s ease-in-out;
 
+}
+     
 

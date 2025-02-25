@@ -13,9 +13,32 @@
 }
 
 
-
 .scheduling_container .msg {
     position: absolute;
     right: 0;
     margin: 1em 3em;
+}
+
+.time {
+    position: absolute;
+    color: #7b7b7b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    padding-top: 2em;
+    border-left: 5px solid rgb(253, 128, 18);
+    margin-top: 4em;
+    right: 67%;
+}
+
+.time h3{
+    padding-bottom: 2em;
+}
+
+.time p {
+    padding-left: 1.5em;
+    line-height:  1.5;
+    width: 80%;
 }

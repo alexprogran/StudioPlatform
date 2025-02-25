@@ -27,9 +27,9 @@
     width: 35%;
     height: 70%;
     top: 0;
-    transform: translateX(200%);
     margin-top: 3em;
     padding: 0;
+    transform: translateX(200%);
     transition: transform 1s ease-in-out;
    
 }
