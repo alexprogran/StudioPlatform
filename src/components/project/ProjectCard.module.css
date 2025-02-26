@@ -74,3 +74,35 @@ box-sizing: border-box;
     font-size: 2em;
 }
 
+.button_fatrash {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+}
+
+.fatrash_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 50%;  
+    color: #fff;    
+}
+
+.fatrash_container .icons{
+    color: #fff;
+    width: 20%;
+    font-size: 2em;
+    background-color: black;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.fatrash_container .icons:hover{
+    transform: scale(1.1);
+    color: red;
+}
+
+.btn {
+    
+}

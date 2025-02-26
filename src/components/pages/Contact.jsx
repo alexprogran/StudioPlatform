@@ -1,8 +1,9 @@
 import {useNavigate} from 'react-router';
 import style from './Contact.module.css';
 import Container from '../layout/Container';
-import ProjectForm from '../project/ProjectFormLogin';
+import ProjectFormLogin from '../project/ProjectFormLogin';
 import ProjectLogo from '../project/ProjectLogo';
+import ProjectInforms from '../project/ProjectInforms';
 
 
 function Contact() { 
@@ -30,12 +31,15 @@ function Contact() {
    <Container customClass='content-center'>      
      
     <div className={style.contact_container}>
-       <div className={style.logo}>
-         <ProjectLogo />
-       </div>
-        <div>
-            <ProjectForm h2Text='Informe os dados' Post={CreatePost} />
-        </div>
+      
+        <ProjectLogo />
+        <ProjectInforms 
+        title='Para que cadastrar os dados?'
+        text='O cadastro dos seus dados se faz necessário para criação da conta e agendamento com a equipe.'
+        />
+        <h2>Informe seus dados</h2>        
+        <ProjectFormLogin  Post={CreatePost} />
+       
     </div>
         
     

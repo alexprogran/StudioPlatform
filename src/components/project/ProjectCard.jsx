@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { FaCheck } from 'react-icons/fa';
+import { FaCheck, FaTrash } from 'react-icons/fa';
 import Button from '../form/Button';
 import styles from './ProjectCard.module.css';
 import PropTypes from 'prop-types';
@@ -42,10 +42,21 @@ function Reagend()  {
             <div className={`${styles.icons} ${styles.icon_float}`}>
                 <FaCheck /> 
             </div>
+            <div className={styles.button_fatrash}>                
+                <div>
+                <Button  
+                    className={styles.btn}
+                    type='submit'                 
+                    text='Reagendamento'
+                    classDinamic='btn_m'
+                 />
+                </div>
+                <div className={styles.fatrash_container}>
+                <FaTrash className={styles.icons} />
+                </div>
+               
            
-            <Button  type='submit' text='Reagendamento' />
-            
-           
+            </div>
            
             </div>
             

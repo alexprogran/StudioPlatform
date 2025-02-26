@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import { useState } from 'react';
 
 import style from './ProjectFormLogin.module.css';
-import Input from '../form/Input';
-import ButtonSubmit from '../form/ButtonSubmit';
+import Inputs from '../form/Inputs';
+import Button from '../form/Button';
 
-function ProjectFormLogin({h2Text, Post, userData}) {
+function ProjectFormLogin({Post, userData}) {
     const [dataForm, setDataForm] = useState(userData || {})
 
     function handleOnChange(e) {
@@ -17,28 +17,29 @@ function ProjectFormLogin({h2Text, Post, userData}) {
     }    
     return <>
    <form onSubmit={submit} className={style.form_container}>
+
         
-        <h2>{h2Text}</h2>
-        <Input 
+       
+        <Inputs 
+        classDinamic='width_m'
         type='text' 
         name="name"
         text='Informe seu nome'
         placeholder='Digite seu nome'
         handleOnChange={handleOnChange}
-        value={dataForm.name || ""}
-        
-        
+        value={dataForm.name || ""} 
         />
-        <Input 
-        type='text' 
+
+        <Inputs 
+        type='tel' 
         name='phone'
         text='Informe o seu telefone'
-        placeholder='Digite seu telefone'
+        placeholder='(99) 99999-9999'
         handleOnChange={handleOnChange}
         value={dataForm.phone ? dataForm.phone: ''}
 
         />
-        <Input 
+        <Inputs 
         type='email' 
         name='email'
         text='Informe o seu email'
@@ -47,9 +48,9 @@ function ProjectFormLogin({h2Text, Post, userData}) {
         value={dataForm.email ? dataForm.email: ''}
         
         />
-        <ButtonSubmit 
+        <Button 
         type='submit'
-        text='Enviar'
+        text='Cadastrar'
         />
 
    </form>
@@ -59,7 +60,6 @@ function ProjectFormLogin({h2Text, Post, userData}) {
 export default ProjectFormLogin
 
 ProjectFormLogin.propTypes = {
-    h2Text: PropTypes.string,
     Post: PropTypes.func,
     userData: PropTypes.object,
 }

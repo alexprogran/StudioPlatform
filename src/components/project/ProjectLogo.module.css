@@ -2,7 +2,6 @@
 display: flex;
 margin: 1em 0 1.5em;
 height: 4em;
-
 }
 
 .projectLogo_container h1 {
@@ -17,5 +16,7 @@ height: 4em;
     font-size: 3em;
 }
 
-
+.margin_0 {
+    margin: 0;
+}
 

@@ -14,7 +14,9 @@
 
 .inputs_container input{
     padding: .7em;
-    border: none;
-   
+    border: none;   
 }
 
+.width_m { 
+    width: 20rem;
+}

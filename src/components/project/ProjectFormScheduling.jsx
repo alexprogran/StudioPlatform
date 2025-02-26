@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Inputs from '../form/inputs';
+import Inputs from '../form/Inputs';
 import Select from '../form/Select';
 import styles from './ProjectFormScheduling.module.css';
 import Button from '../form/Button';
@@ -28,7 +28,7 @@ function ProjectFormScheduling({schedulingData}) {
         })
         .catch((error) => console.log('Erro no carregamento dos serviços: ', error))
         },[])
-    
+    0
     function createPost(scheduling) {
 
         fetch('http://localhost:5000/scheduling',{
@@ -60,7 +60,7 @@ function ProjectFormScheduling({schedulingData}) {
 
     function submit(e){
         e.preventDefault()
-        createPost(scheduling)
+        // createPost(scheduling)
         setMessage(true)  
         setCard('open')
     }  

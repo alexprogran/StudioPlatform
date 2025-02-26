@@ -1,12 +1,13 @@
-import styles from './inputs.module.css';
+import styles from './Inputs.module.css';
 import PropTypes from 'prop-types';
 
-function Inputs({ name,text, type, value, placeholder, handleOnChange}) {
-
+function Inputs({ name,text, type, value, placeholder, handleOnChange,classDinamic}) {
+    console.log(classDinamic)
     return <>
     <div className={styles.inputs_container}>
-    <label htmlFor={name}>{text}:</label>
+    <label htmlFor={name}>{text}:</label>    
     <input 
+    className={styles[classDinamic]}
     id={name} 
     type={type} 
     placeholder={placeholder} 
@@ -26,6 +27,7 @@ Inputs.propTypes = {
     handleOnChange: PropTypes.func,
     name: PropTypes.string, 
     value: PropTypes.string,
+    classDinamic: PropTypes.string
 }
 
 

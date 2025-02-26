@@ -6,24 +6,6 @@
       "time": "23:21",
       "profissional": "Wesley",
       "service": "Selecione o serviço"
-    },
-    {
-      "id": "1cb3",
-      "date": "2025-02-24",
-      "time": "23:36",
-      "profissional": "Wesley",
-      "service": "Selecione o serviço"
-    }
-  ],
-  "data_user": [
-    {
-      "id": "d962",
-      "name": "Laura Loudes",
-      "phone": "1234567",
-      "email": "lauraloudes@email.com"
-    },
-    {
-      "id": "46a1"
     }
   ],
   "categoria": [
@@ -52,6 +34,17 @@
     {
       "id": "3",
       "nome": "Manicure"
+    }
+  ],
+  "data_user": [
+    {
+      "id": "c2fe",
+      "name": "Mariasinha ",
+      "phone": "99-9999-99999",
+      "email": "mariasinha@email.com"
+    },
+    {
+      "id": "6eea"
     }
   ]
 }
