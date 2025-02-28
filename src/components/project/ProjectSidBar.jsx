@@ -20,7 +20,8 @@ function ProjectSideBar({closed}) {
                 <li><Link to='#'>Manicure</Link></li>
                 <li><Link to='#'>Pedicure</Link></li>
                 <li><Link to="#">Maquiagem</Link></li>
-                <li><Link to="#">Hidratações</Link></li>                
+                <li><Link to="#">Hidratações</Link></li>
+                <li><Link to='/schedings'>Agendamentos</Link></li>                
                 
             </ul>
         </div>

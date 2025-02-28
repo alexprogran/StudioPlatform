@@ -60,7 +60,7 @@ function ProjectFormScheduling({schedulingData}) {
 
     function submit(e){
         e.preventDefault()
-        // createPost(scheduling)
+        createPost(scheduling)
         setMessage(true)  
         setCard('open')
     }  

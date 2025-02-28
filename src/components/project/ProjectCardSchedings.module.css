@@ -1,0 +1,39 @@
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1em; 
+    padding: 1em;   
+    max-width: 20%;
+    height: 120%;
+    background-color: rgba(69, 64, 64, 0.1);
+    border-left: 3px solid rgb(15, 161, 201);
+    cursor: pointer;
+}
+
+.card_container:hover {
+    background-color: rgba(69, 64, 64, 0.5 );
+}
+
+.card_container p {
+    margin-bottom: 0.5em;
+}
+
+.checkbox_container{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    height: 100%;
+    cursor: pointer;
+
+}  
+
+.checkbox_container p{
+    margin-top: .5em;
+    margin-left: 1em;
+}
+
+.checkbox_ok{
+    background-color: rgba(15, 201, 31, 0.4);
+    border-left: 3px solid rgb(15, 201, 31);
+}
