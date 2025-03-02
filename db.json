@@ -6,36 +6,7 @@
       "time": "16:13",
       "services": "corte",
       "profissional": "Mário Santos"
-    },
-    {
-      "id": "dcc6",
-      "data": "2025-02-27",
-      "time": "16:13",
-      "services": "limpeza de pele",
-      "profissional": "Mário Santos"
-    },
-    {
-      "id": "1",
-      "date": "2025-02-27",
-      "time": "16:13",
-      "services": "corte",
-      "profissional": "Mário Santos"
-    },
-    {
-      "id": "2",
-      "date": "2025-02-27",
-      "time": "16:13",
-      "services": "corte",
-      "profissional": "Mário Santos"
-    },
-    {
-      "id": "3",
-      "date": "2025-02-27",
-      "time": "16:13",
-      "services": "corte",
-      "profissional": "Mário Santos"
-    }
-    
+    }   
   ],
   "categoria": [
     {

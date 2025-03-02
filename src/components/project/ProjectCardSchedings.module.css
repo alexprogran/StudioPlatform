@@ -4,8 +4,8 @@
     flex-direction: column;
     margin-right: 1em; 
     padding: 1em;   
-    max-width: 20%;
-    height: 120%;
+    width:auto;
+    height: auto;
     background-color: rgba(69, 64, 64, 0.1);
     border-left: 3px solid rgb(15, 161, 201);
     cursor: pointer;

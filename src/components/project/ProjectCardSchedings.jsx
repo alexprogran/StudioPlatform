@@ -1,10 +1,11 @@
 import styles from './ProjectCardSchedings.module.css';
+import ProjectSwitch from './ProjectSwitch';
 import PropTypes from 'prop-types';
 import {useState, useEffect} from 'react';
 
-function ProjectCardSchedings() {
-    const[scheding, setScheding] = useState([])
+function ProjectCardSchedings({contagem}) {
 
+    const[scheding, setScheding] = useState([]);
    
     useEffect(() => {
         fetch('http://localhost:5000/scheduling', {
@@ -16,35 +17,35 @@ function ProjectCardSchedings() {
         .then((request) => request.json())
         .then((data) => {
             setScheding(data)   
-            console.log(`Dados: ${data}`)
-        })
-
+        })               
     },[])
+
+    useEffect(() => {
+        if(scheding.length > 0 ) {                     
+        contagem(scheding)
+        console.log(`Elemento da lista no filho: ${scheding}`)
+        }
+    },[scheding])
+    
+   
   
     return  <>
     
-    {scheding.map((data) => (    
+    {scheding.map((data) => (        
 
         <div  key={data.id}  className={`${styles.card_container}`}>
-        <p>
-           Horario: {data.time}           
-       </p>
-       <p>
-           Procedimento: {data.services}       
-       </p>
-       <p>
-           Profissional: {data.profissional}
-       </p>  
-       <div>
-       <label className={styles.checkbox_container}>
-       <input type="checkbox" />
-       <p>Confirmado</p>
-       </label>
-       </div>      
-
-       </div>
-
-        
+            <p>
+                Horario: {data.time}           
+            </p>
+            <p>
+                Procedimento: {data.services}       
+            </p>
+            <p>
+                Profissional: {data.profissional}
+            </p> 
+           
+            <ProjectSwitch />
+        </div>        
     ))}
     
     </>
@@ -53,5 +54,6 @@ function ProjectCardSchedings() {
 export default ProjectCardSchedings
 
 ProjectCardSchedings.propTypes = {
-    schedings: PropTypes.object
+    contagem: PropTypes.func
+    
 }
