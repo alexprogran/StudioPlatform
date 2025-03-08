@@ -61,7 +61,7 @@
     width: 12%;
     height: 70vh;
     padding: 0;
-    top: 100%;
+    top: 100%; 
     transform: translateX(-100%);
     transition: transform 0.5s;
     z-index: 1  

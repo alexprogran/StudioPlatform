@@ -26,18 +26,18 @@ function Schedings() {
     </div>
 
 
-{agend.map((item, index) => (
-                <div key={index}>
-                    {index % 5 === 0 && (
-                        <div className={styles.list_schedings}>
-                            <div className={styles.date}>
-                                <p>Hoje</p>
+        {/* {agend.map((item, index) => (
+                    <div key={index}>
+                        {index % 5 === 0 && (
+                            <div className={styles.list_schedings}>
+                                <div className={styles.date}>
+                                    <p>Hoje</p>
+                                </div>
+                                <ProjectCardSchedings contagem={count} />
                             </div>
-                            <ProjectCardSchedings contagem={count} />
-                        </div>
-                    )}
-                </div>
-            ))}
+                        )}
+                    </div>
+                ))} */}
 
 
     </div>
