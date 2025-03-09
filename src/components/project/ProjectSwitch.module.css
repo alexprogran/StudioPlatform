@@ -1,24 +1,22 @@
 .container {
-    border: 1px solid green;
-    position: absolute;     
-    width: 150%;
-    height: 40%;  
-    gap: 0.5em;
-    bottom: 0.5em ;
-    padding: 2em;
-    
+    width: 90%;
+    height: 20%;
+    top: 65%;
+    position: absolute;
+    display: flex;
+    align-items: center;   
 }
-
-.checkbox_confirm{ 
+/*  
+ .checkbox_confirm{ 
     position: absolute;
     display: flex;   
     width: 100%;
     height: 21px;
     cursor: pointer;
     bottom: 2.5em;
-}
+} 
 
-.checkbox_confirm p {
+ .checkbox_confirm p {
     position: absolute;
     right: 50%;
 
@@ -32,22 +30,75 @@
     bottom: 1px;
     background-color: #908d8d;
     border-radius: 25px;
+}  */
+
+.container_switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}  
+
+.container_switch p{
+    color: #766b6b;
 }
 
-.checkbox_confirm span:before {
+.container_switch .green {
+    /* color: rgb(97, 248, 110) */
+    color:  rgb(97, 248, 110);
+}
+
+.container_switch input{
+  visibility: hidden;
+}
+
+.container_switch span {
+    display: inline-block;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 2em; 
+    height: 12px;
+    border-radius: 15px;
+    background-color: rgb(15, 161, 201); 
+}
+
+.p_absolut {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 25% ;
+}
+
+.container_switch span::before {
     content: '';
     position: absolute;
-    bottom: 1px;
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    transform: translateY(-10%);
+    border-radius: 50%;
+    transition: .4s;
+
+}
+/* .container_switch:before {
+    content: '';
+    position: absolute;  
+    top: -3px;
     left: 2px;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background-color: #fff;
     transition: .4s;
-}
+}  */
 
+      
 .checkbox_confirm input:checked + span {
-    background-color:rgb(5, 164, 23) ;
+    /* background-color:rgb(5, 164, 23) ; */
+    background-color: rgb(97, 248, 110)
 }
 
 .checkbox_confirm input:checked + span:before {
@@ -76,7 +127,7 @@ transform: translateX(15px);
     right: 87%;
     left: 0;
     bottom: 1px;
-    background-color: #908d8d;
+    background-color:rgb(15, 161, 201);
     border-radius: 25px;
 }
 

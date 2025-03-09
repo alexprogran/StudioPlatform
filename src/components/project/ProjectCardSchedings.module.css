@@ -5,7 +5,7 @@
     flex-direction: column;
     margin-right: 1em; 
     padding: 1em;   
-    min-width: 20%;
+    min-width: 200px;
     height: auto;
     background-color: rgba(69, 64, 64, 0.1);
     border-left: 3px solid rgb(15, 161, 201);
@@ -16,8 +16,17 @@
     background-color: rgba(69, 64, 64, 0.5 );
 }
 
+
 .card_container p {
     margin-bottom: 0.5em;
+    color: rgb(139, 157, 162);
+}
+
+.card_container h3 {
+    padding-bottom: 1em;
+    text-align: center;
+    color: rgb(170, 225, 240);
+    /* color: rgb(255, 155, 0); */
 }
 
 .gray {
@@ -25,9 +34,9 @@
     color: #7b7b7b;
 }
 
-.green{
-    color: rgb(84, 174, 91) ;
-}
+/* .green{
+    color: rgb(170, 229, 175) ;
+} */
 
 .checkbox_container{ 
     display: flex;
@@ -38,11 +47,17 @@
 }  
 
 .checkbox_ok{
-    border-left: 3px solid rgb(15, 201, 31);
+    /* border-left: 3px solid rgb(15, 201, 31); */
+    border-left: 3px solid rgb(97, 248, 110);
 } 
 
 .checkbox_ok p{
-    color: rgb(84, 174, 91) ;
+    /* color: rgb(84, 174, 91) ; */
+    color: rgb(133, 175, 137) ;
+}
+
+.checkbox_ok h3{
+    color: rgb(153, 236, 160) ;
 }
 
 .switch_container {

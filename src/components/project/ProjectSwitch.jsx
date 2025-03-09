@@ -8,7 +8,7 @@ function Switch( { text, listId, handleCheckBox,typeSwitch }) {
     const [switchActive, setSwitchActive] = useState(false);
     // const [switchCanceled, setSwitchCanceled] = useState(false);
        
-    
+     
     const handleActiveChange = () => {
 
         setSwitchActive((previous) => {
@@ -17,6 +17,8 @@ function Switch( { text, listId, handleCheckBox,typeSwitch }) {
         })         
         handleCheckBox(listId)        
     }   
+
+    console.log('Estado do switch:',switchActive)
     
     // const handleCanceledChange = () => {
 
@@ -31,16 +33,20 @@ function Switch( { text, listId, handleCheckBox,typeSwitch }) {
    
     return  <>
         <div className={styles.container}>
-        <p>{text}</p>
+       
         <label className={styles[typeSwitch]}>
-            <input 
+           <div className={styles.container_switch}>
+           <input 
             type="checkbox"
             checked={switchActive}
             onChange={handleActiveChange}
-            />
-            <span></span>
-           
+            />    
+            <span></span> 
+            <p className={`${styles.p_absolut} ${switchActive ? styles.green : ''}`}>{text}</p>       
+           </div>          
+                       
         </label>
+        
         {/* <lebal className={styles.checkbox_canceled}>
             <input
             type="checkbox"

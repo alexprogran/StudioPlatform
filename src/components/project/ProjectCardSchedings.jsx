@@ -60,9 +60,8 @@ function ProjectCardSchedings() {
     {scheding.map((data) => (        
         
         <div  key={data.id}  className={`${styles.card_container}  ${listId.includes(data.id) ? styles.checkbox_ok : ''}`}>
-            <p className={styles.paragraph}>
-                Horario: {data.time}           
-            </p>
+            
+            <h3>{data.time}</h3>
             <p className={styles.paragraph}>
                 Procedimento: {data.services}       
             </p>
@@ -79,6 +78,15 @@ function ProjectCardSchedings() {
                     handleCheckBox={handleCheckboxChange} 
                     listId={data.id }
                 />
+            
+            {/* <ProjectSwitch 
+                    text='Cancelado'
+                    typeSwitch='checkbox_confirm'
+                    // confirm={stateSwitch}
+                    canceled={stateCanceled}
+                    handleCheckBox={handleCheckboxChange} 
+                    listId={data.id }
+                /> */}
            
           
            
