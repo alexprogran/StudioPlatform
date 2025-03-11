@@ -6,24 +6,25 @@ import {useState, useEffect} from 'react';
 function ProjectCardSchedings() {
 
     const[scheding, setScheding] = useState([]);
-    // const [activeSwitch, setActiveSwitch] = useState(false);
-    const [listId, setListId] = useState([]);
+    const [activeConfirm, setActiveSwitch] = useState(false);
     const [canceled, setCanceled] = useState(false)
+    const [listId, setListId] = useState([]);
+   
 
+    const stateSwitch = (state) => {
+        setActiveSwitch(state)              
+    } 
 
-    
-
-    // const stateSwitch = (state) => {
-
-    //     setActiveSwitch(state)  
-    //     console.log('Estado so switch:' ,activeSwitch)      
-    // }
-
-
-    const stateCanceled = (state) => {
-        setCanceled(state)
+    const stateCanceled = (states) => {
+        setCanceled(states)
         console.log('Estado do Canceled;', canceled)
     }
+
+    useEffect(() => {   
+        console.log('Estado do switch canceled no pai:', canceled);
+        console.log('Estado do confirm do pai:', activeConfirm)
+    },[activeConfirm, canceled])
+
 
     const handleCheckboxChange = ((id) => {
     
@@ -31,14 +32,15 @@ function ProjectCardSchedings() {
             const checkPrevious = previous.includes(id);
             if (checkPrevious) {
                return previous.filter((idItem) => idItem !== id)
-            } else {
-                return [...listId, id]
+            } else {                
+                return [...previous, id]
             }
         })
     })
-     
-    console.log('Lista dos IDs seleciondos: ', listId)
-
+    
+    useEffect(() => {
+        console.log('Listas de id:', listId)
+    },[listId])
    
     useEffect(() => {
         fetch('http://localhost:5000/scheduling', {
@@ -59,7 +61,7 @@ function ProjectCardSchedings() {
     
     {scheding.map((data) => (        
         
-        <div  key={data.id}  className={`${styles.card_container}  ${listId.includes(data.id) ? styles.checkbox_ok : ''}`}>
+        <div  key={data.id}  className={`${styles.card_container}  ${listId.includes(data.id) ? (activeConfirm ? styles.confirm : canceled ? styles.canceled : '') : ''}`}>
             
             <h3>{data.time}</h3>
             <p className={styles.paragraph}>
@@ -70,24 +72,29 @@ function ProjectCardSchedings() {
             </p> 
 
             {/* <div className={styles.switch_container}> </div> */}
-            <ProjectSwitch 
+            <ProjectSwitch                    
+                    ok={true}
                     text='Confirmado'
-                    typeSwitch='checkbox_confirm'
-                    // confirm={stateSwitch}
+                    confirm={stateSwitch}
                     canceled={stateCanceled}
                     handleCheckBox={handleCheckboxChange} 
                     listId={data.id }
                 />
-            
-            {/* <ProjectSwitch 
+{/* 
+                <ProjectSwitch 
+                 
                     text='Cancelado'
-                    typeSwitch='checkbox_confirm'
-                    // confirm={stateSwitch}
+                    confirm={stateSwitch}
                     canceled={stateCanceled}
                     handleCheckBox={handleCheckboxChange} 
                     listId={data.id }
                 /> */}
-           
+
+            
+
+                
+            
+            
           
            
                 

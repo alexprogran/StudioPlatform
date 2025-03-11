@@ -3,7 +3,7 @@ import styles from './ProjectSwitch.module.css';
 import PropTypes from 'prop-types';
 
 
-function Switch( { text, listId, handleCheckBox,typeSwitch }) {
+function Switch( { text, listId, handleCheckBox}) {
 
     const [switchActive, setSwitchActive] = useState(false);
     // const [switchCanceled, setSwitchCanceled] = useState(false);
@@ -34,7 +34,7 @@ function Switch( { text, listId, handleCheckBox,typeSwitch }) {
     return  <>
         <div className={styles.container}>
        
-        <label className={styles[typeSwitch]}>
+        <label>
            <div className={styles.container_switch}>
            <input 
             type="checkbox"
@@ -66,7 +66,6 @@ export default Switch
 
 Switch.propTypes = {
     text: PropTypes.string,
-    typeSwitch:PropTypes.string,
     confirm: PropTypes.func,
     canceled: PropTypes.func,
     listId: PropTypes.array,
