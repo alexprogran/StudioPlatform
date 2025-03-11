@@ -46,21 +46,21 @@
     cursor: pointer;
 }  
 
-.checkbox_ok{
+.confirm{
     /* border-left: 3px solid rgb(15, 201, 31); */
     border-left: 3px solid rgb(97, 248, 110);
 } 
 
-.checkbox_ok p{
+.confirm p{
     /* color: rgb(84, 174, 91) ; */
     color: rgb(133, 175, 137) ;
 }
 
-.checkbox_ok h3{
+.confirm h3{
     color: rgb(153, 236, 160) ;
 }
 
-.switch_container {
+/* .switch_container {
     position: relative;
     border: 1px solid red;
     display: flex;
@@ -77,11 +77,11 @@
 
 .switch_container .p{
     color: rgb(84, 174, 91) ;
-}
+} */
 
 .canceled {
     border-left: 3px solid red;
-    background-color:rgba(62, 22, 22, 0.5);
+    /* background-color:rgba(62, 22, 22, 0.5); */
 }
 
 .canceled:hover {

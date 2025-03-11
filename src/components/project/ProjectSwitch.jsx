@@ -1,67 +1,64 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import styles from './ProjectSwitch.module.css';
 import PropTypes from 'prop-types';
 
 
-function Switch( { text, listId, handleCheckBox,typeSwitch }) {
+function Switch( { text, listId, handleCheckBox,typeSwitch, confirm, ok, canceled}) {
 
-    const [switchActive, setSwitchActive] = useState(false);
-    // const [switchCanceled, setSwitchCanceled] = useState(false);
-       
-     
-    const handleActiveChange = () => {
-
-        setSwitchActive((previous) => {
-            const newState = !previous; 
-            return newState
-        })         
-        handleCheckBox(listId)        
-    }   
-
-    console.log('Estado do switch:',switchActive)
+    const [switchConfirm, setSwitchConfirm] = useState(false);
+    const [switchCanceled, setSwitchCanceled] = useState(false);
     
-    // const handleCanceledChange = () => {
+    const handleChange = () => {
 
-    //     setSwitchCanceled((previous) => {
+        if(ok) {
+            setSwitchConfirm((previous) => !previous);
+            
+        } else {
+                setSwitchCanceled((prev) => !prev)
+              
+            }  
+            
+        handleCheckBox(listId);  
 
-    //         const newState = !previous;            
-    //         return newState
-    //     });
+        } 
+             
+        
+        useEffect(() => {
+                if(switchConfirm) {
+                    confirm(switchConfirm)
+                }else {
+                    canceled(switchCanceled)
+                }
+                console.log('Estado do Canceled:', switchCanceled)
+                console.log('Lista de Ids no filho:', handleCheckBox(listId))
+                
+               
+        },[switchConfirm, switchCanceled])
 
-    //     canceled(!switchCanceled);          
-    // }
    
     return  <>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.bottom}`}>
        
         <label className={styles[typeSwitch]}>
-           <div className={styles.container_switch}>
+           <div className={`${styles.container_switch} ${ok ? styles.confirm : styles.canceled}`}>
            <input 
             type="checkbox"
-            checked={switchActive}
-            onChange={handleActiveChange}
+            checked={ok ? switchConfirm : switchCanceled}
+            onChange={handleChange}
             />    
             <span></span> 
-            <p className={`${styles.p_absolut} ${switchActive ? styles.green : ''}`}>{text}</p>       
-           </div>          
-                       
-        </label>
+            <p className={`${styles.p_absolut} ${switchConfirm ? styles.green : switchCanceled ? styles.red : ''}`}>{text}</p>       
+           </div>  
+                 
+        </label>        
         
-        {/* <lebal className={styles.checkbox_canceled}>
-            <input
-            type="checkbox"
-            checked={switchCanceled}   
-            onChange={handleCanceledChange}
-            />
-            <span></span>           
-        </lebal>   */}
         </div>
 
    
      
     </>
-}
 
+}
 export default Switch
 
 Switch.propTypes = {
@@ -69,7 +66,10 @@ Switch.propTypes = {
     typeSwitch:PropTypes.string,
     confirm: PropTypes.func,
     canceled: PropTypes.func,
-    listId: PropTypes.array,
+    listId: PropTypes.string,
     handleCheckBox: PropTypes.func,
+    annulled: PropTypes.func,
+    ok: PropTypes. bool,
+    
     
 }
