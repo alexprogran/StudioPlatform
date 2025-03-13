@@ -6,18 +6,24 @@ import {useState, useEffect} from 'react';
 function ProjectCardSchedings() {
 
     const[scheding, setScheding] = useState([]);
-    const [activeConfirm, setActiveSwitch] = useState(false);
-    const [canceled, setCanceled] = useState(false)
+    const [activeConfirm, setActiveConfirm] = useState(false);
+    const [canceled, setCanceled] = useState(false);
+    const [defaults, setDefault] = useState(false);
     const [listId, setListId] = useState([]);
    
 
     const stateSwitch = (state) => {
-        setActiveSwitch(state)              
+        setActiveConfirm(state)              
     } 
 
     const stateCanceled = (states) => {
         setCanceled(states)
         console.log('Estado do Canceled;', canceled)
+    }
+
+    const stateDefault = (state) => {
+        setDefault(state)
+        console.log('Estado do default no pai: ', defaults);
     }
 
     useEffect(() => {   
@@ -65,10 +71,10 @@ function ProjectCardSchedings() {
         <div  key={data.id}  className={`${styles.card_container}  ${listId.includes(data.id) ? (activeConfirm ? styles.confirm : canceled ? styles.canceled : '') : ''}`}>
             
             <h3>{data.time}</h3>
-            <p className={styles.paragraph}>
+            <p>
                 Procedimento: {data.services}       
             </p>
-            <p className={styles.paragraph}>
+            <p>
                 Profissional: {data.profissional}
             </p> 
 
@@ -76,21 +82,23 @@ function ProjectCardSchedings() {
             <ProjectSwitch                    
                     ok={true}
                     text='Confirmado'
-                    // typeSwitch='checkbox_canceled'
                     confirm={stateSwitch}
                     canceled={stateCanceled}
-                    handleCheckBox={handleCheckboxChange} 
-                    listI={data.id }
-                />
-{/* 
-                <ProjectSwitch 
-                 
-                    text='Cancelado'
-                    confirm={stateSwitch}
-                    canceled={stateCanceled}
+                    defaults={stateDefault}
                     handleCheckBox={handleCheckboxChange} 
                     listId={data.id }
-                /> */}
+                />
+                
+
+                <ProjectSwitch 
+                    annulled={true}                 
+                    text='Cancelado'
+                    confirm={stateSwitch}                  
+                    canceled={stateCanceled}
+                    stateDefault={stateDefault}
+                    handleCheckBox={handleCheckboxChange} 
+                    listId={data.id }
+                />
 
             
 

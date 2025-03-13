@@ -3,47 +3,72 @@ import styles from './ProjectSwitch.module.css';
 import PropTypes from 'prop-types';
 
 
-function Switch( { text, listId, handleCheckBox,typeSwitch, confirm, ok, canceled}) {
+function Switch( { text, listId, handleCheckBox,confirm, ok, canceled, defaults, annulled}) {
 
     const [switchConfirm, setSwitchConfirm] = useState(false);
     const [switchCanceled, setSwitchCanceled] = useState(false);
+    const [switchDefault, setSwitchDefault] = useState(false)
     
     const handleChange = () => {
 
         if(ok) {
             setSwitchConfirm((previous) => !previous);
+           
             
-        } else {
-                setSwitchCanceled((prev) => !prev)
-              
-            }  
+        }else {
+            setSwitchCanceled((prev) => !prev)
+          
+        }
+                     
             
         handleCheckBox(listId);  
 
         } 
+
+
+        useEffect(() => {
+            if(switchConfirm && switchCanceled) {
+              setSwitchDefault((prev) => !prev)
+              defaults(switchDefault)
+                console.log('Os estados estão true.');             
+                // canceled(!switchConfirm)
+            }
+            else if(switchConfirm) {
+                confirm(true)
+                // canceled(false)
+            }
+             else if(switchCanceled){
+                canceled(true)
+                confirm(false)
+                // confirm(!switchCanceled)           
+            console.log('Estado do Canceled:', switchCanceled)           
+            }
+    },[switchConfirm, switchCanceled])
+
              
         
-        useEffect(() => {
-                if(switchConfirm) {
-                    confirm(switchConfirm)
-                }else {
-                    canceled(switchCanceled)
-                }
-                console.log('Estado do Canceled:', switchCanceled)
-                console.log('Lista de Ids no filho:', handleCheckBox(listId))
-                
+        // useEffect(() => {
+        //         if(switchConfirm) {
+        //             confirm(switchConfirm)
+        //             // canceled(!switchConfirm)
+        //         }
+        //         if(switchCanceled){
+        //             canceled(switchCanceled)
+        //             // confirm(!switchCanceled)
+        //         }
+        //         console.log('Estado do Canceled:', switchCanceled)           
                
-        },[switchConfirm, switchCanceled])
+        // },[switchConfirm, switchCanceled])
 
    
     return  <>
-        <div className={`${styles.container} ${styles.bottom}`}>
+        <div className={`${styles.container}`}>
        
-        <label className={styles[typeSwitch]}>
+        <label>
            <div className={`${styles.container_switch} ${ok ? styles.confirm : styles.canceled}`}>
            <input 
             type="checkbox"
-            checked={ok ? switchConfirm : switchCanceled}
+            checked={switchCanceled || switchConfirm}
             onChange={handleChange}
             />    
             <span></span> 
@@ -63,12 +88,12 @@ export default Switch
 
 Switch.propTypes = {
     text: PropTypes.string,
-    typeSwitch:PropTypes.string,
     confirm: PropTypes.func,
     canceled: PropTypes.func,
+    defaults: PropTypes.func,
     listId: PropTypes.string,
     handleCheckBox: PropTypes.func,
-    annulled: PropTypes.func,
+    annulled: PropTypes.bool,
     ok: PropTypes. bool,
     
     

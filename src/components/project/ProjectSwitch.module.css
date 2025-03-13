@@ -1,6 +1,5 @@
 .container {
     position: absolute;
-    border: 1px solid red;
     width: 90%;
     height: 50%;
     top: 65%;   
@@ -8,9 +7,7 @@
     align-items: center;
 }
 
-.container .bottom {
-    
-}
+
 /*  
  .checkbox_confirm{ 
     position: absolute;
@@ -37,22 +34,26 @@
     border-radius: 25px;
 }  */
 
-.container_switch {
+/* .container_switch {
+    border: 1px solid green;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-}  
+}   */
 
 .container_switch p{
     color: #766b6b;
 }
 
 .container_switch .green {
-    /* color: rgb(97, 248, 110) */
-    color:  rgb(97, 248, 110);
+     color: rgb(97, 248, 110)    
+} 
+
+.container_switch .red {
+    color:  rgb(255, 69, 69);  ;
 }
 
 .container_switch input{
@@ -62,18 +63,20 @@
 .container_switch span {
     display: inline-block;
     position: absolute;
-    top: 18%;
     left: 0;
     width: 2em; 
     height: 12px;
     border-radius: 15px;
-    background-color: rgb(15, 161, 201); 
+    background-color: #766b6b;
+    cursor: pointer;
+    /* background-color: rgb(15, 161, 201); 
+    */
 }
 
 .p_absolut {
     display: inline-block;
     position: absolute;
-    top: 10%;
+    top:0;
     left: 25% ;
 }
 
@@ -86,7 +89,6 @@
     transform: translateY(-10%);
     border-radius: 50%;
     transition: .4s;
-
 }
 
 
@@ -102,6 +104,13 @@
     transition: .4s;
 }  */
 
+.confirm span{
+top: 7%;
+/* cursor: pointer; */
+z-index: 1;
+}
+
+
       
 .confirm input:checked + span {
     /* background-color:rgb(5, 164, 23) ; */
@@ -113,33 +122,27 @@
 transform: translateX(15px);
 }
 
-.canceled span{
-    position: absolute;
-    }
 .canceled input:checked + span{ 
     background-color: rgb(241, 76, 76);
         
 }
 
-.canceled .red {
-    color:  rgb(241, 76, 76);  ;
-}
-
-
 .canceled p {
     position: absolute;
     right: 50%;
+    top: 30%;
+
 
 }
 
 .canceled span {
     position: absolute;   
-    top: 0;
+    top: 40%;
     right: 87%;
     left: 0;
     bottom: 1px;
-    background-color:rgb(15, 161, 201);
     border-radius: 25px;
+    /* cursor: pointer; */
 }
 
 .checkbox_canceled span:before {
