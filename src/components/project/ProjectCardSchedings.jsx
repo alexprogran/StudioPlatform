@@ -15,7 +15,7 @@ function ProjectCardSchedings() {
     //     setActiveConfirm(state)              
     // } 
 
-    const state_confirm = (id, state) => {
+    const stateConfirm = (id, state) => {
         setStateCard((previous) => (
             {  
                 ...previous,
@@ -24,7 +24,7 @@ function ProjectCardSchedings() {
         ))
     }
 
-    const state_canceled =(id, state) => {
+    const stateCanceled =(id, state) => {
         setStateCard((previous) => ({
             ...previous, 
             [id]: {...previous[id], canceled: state}
@@ -47,9 +47,7 @@ function ProjectCardSchedings() {
     //     })
     // })
     
-    useEffect(() => {
-        console.log('Listas de id:', listId)
-    },[listId])
+  
    
     useEffect(() => {
         fetch('http://localhost:5000/scheduling', {
@@ -84,22 +82,18 @@ function ProjectCardSchedings() {
             <ProjectSwitch                    
                     ok={true}
                     text='Confirmado'
-                    confirm={state_confirm(data.id)}
-                    canceled={state_canceled(data.id)}
-                    defaults={stateDefault}
-                    handleCheckBox={handleCheckboxChange} 
-                    listId={data.id }
+                    confirm={(state) => stateConfirm(data.id, state)}                  
+                    canceled={(state) => stateCanceled(data.id, state)}   
+                   
                 />
                 
 
                 <ProjectSwitch 
                     annulled={true}                 
                     text='Cancelado'
-                    confirm={stateSwitch}                  
-                    canceled={stateCanceled}
-                    stateDefault={stateDefault}
-                    handleCheckBox={handleCheckboxChange} 
-                    listId={data.id }
+                    confirm={(state) => stateConfirm(data.id, state)}                  
+                    canceled={(state) => stateCanceled(data.id, state)}   
+                 
                 />
 
             

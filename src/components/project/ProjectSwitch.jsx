@@ -18,30 +18,11 @@ function Switch( { text, listId, handleCheckBox,confirm, ok, canceled, defaults,
         }else {
             setSwitchCanceled((prev) => !prev)
           
-        }
-                     
-            
-        handleCheckBox(listId);  
-
-        } 
+        }}
 
 
         useEffect(() => {
-            if(switchConfirm && switchCanceled) {
-              setSwitchDefault((prev) => !prev)
-              defaults(switchDefault)
-                console.log('Os estados estão true.');             
-                // canceled(!switchConfirm)
-            }
-            else if(switchConfirm) {
-                confirm(true)
-                // canceled(false)
-            }
-             else if(switchCanceled){
-                canceled(true)
-                confirm(false)
-                // confirm(!switchCanceled)           
-            console.log('Estado do Canceled:', switchCanceled)           
+                 confirm()
             }
     },[switchConfirm, switchCanceled])
 
