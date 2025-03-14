@@ -1,31 +1,24 @@
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import styles from './ProjectSwitch.module.css';
 import PropTypes from 'prop-types';
 
 
-function Switch( { text, listId, handleCheckBox,confirm, ok, canceled, defaults, annulled}) {
+function Switch( { text,confirm, ok, canceled}) {
 
     const [switchConfirm, setSwitchConfirm] = useState(false);
     const [switchCanceled, setSwitchCanceled] = useState(false);
-    const [switchDefault, setSwitchDefault] = useState(false)
     
     const handleChange = () => {
 
         if(ok) {
             setSwitchConfirm((previous) => !previous);
-           
+            confirm(!switchConfirm);          
             
         }else {
-            setSwitchCanceled((prev) => !prev)
+            setSwitchCanceled((prev) => !prev);
+            canceled(!switchCanceled);
           
-        }}
-
-
-        useEffect(() => {
-                 confirm()
-            }
-    },[switchConfirm, switchCanceled])
-
+        }}       
              
         
         // useEffect(() => {
@@ -74,7 +67,6 @@ Switch.propTypes = {
     defaults: PropTypes.func,
     listId: PropTypes.string,
     handleCheckBox: PropTypes.func,
-    annulled: PropTypes.bool,
     ok: PropTypes. bool,
     
     

@@ -1,19 +1,13 @@
 import styles from './ProjectCardSchedings.module.css';
 import ProjectSwitch from './ProjectSwitch';
 import PropTypes from 'prop-types';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useDeferredValue} from 'react';
 
 function ProjectCardSchedings() {
 
     const[scheding, setScheding] = useState([]);
-    const [activeConfirm, setActiveConfirm] = useState(false);
-    const [canceled, setCanceled] = useState(false);
-    const [steteCard, setStateCard] = useState({});
+    const [stateCard, setStateCard] = useState({});
    
-
-    // const stateSwitch = (state) => {
-    //     setActiveConfirm(state)              
-    // } 
 
     const stateConfirm = (id, state) => {
         setStateCard((previous) => (
@@ -31,7 +25,9 @@ function ProjectCardSchedings() {
         }))
     }
 
-
+    useEffect(() => {
+        console.log('Object statCard:', stateCard )
+    })
    
 
     // const handleCheckboxChange = ((id) => {
@@ -68,7 +64,7 @@ function ProjectCardSchedings() {
     
     {scheding.map((data) => (        
         
-        <div  key={data.id}  className={`${styles.card_container}  ${listId.includes(data.id) ? (activeConfirm ? styles.confirm : canceled ? styles.canceled : '') : ''}`}>
+        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.includes(data.id) ? (stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : '') : ''}`}>
             
             <h3>{data.time}</h3>
             <p>
