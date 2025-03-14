@@ -8,42 +8,44 @@ function ProjectCardSchedings() {
     const[scheding, setScheding] = useState([]);
     const [activeConfirm, setActiveConfirm] = useState(false);
     const [canceled, setCanceled] = useState(false);
-    const [defaults, setDefault] = useState(false);
-    const [listId, setListId] = useState([]);
+    const [steteCard, setStateCard] = useState({});
    
 
-    const stateSwitch = (state) => {
-        setActiveConfirm(state)              
-    } 
+    // const stateSwitch = (state) => {
+    //     setActiveConfirm(state)              
+    // } 
 
-    const stateCanceled = (states) => {
-        setCanceled(states)
-        console.log('Estado do Canceled;', canceled)
-    }
-
-    const stateDefault = (state) => {
-        setDefault(state)
-        console.log('Estado do default no pai: ', defaults);
-    }
-
-    useEffect(() => {   
-        console.log('Estado do switch canceled no pai:', canceled);
-        console.log('Estado do confirm do pai:', activeConfirm)
-    },[activeConfirm, canceled])
-
-
-    const handleCheckboxChange = ((id) => {
-    
-        setListId((previous) => {
-            const checkPrevious = previous.includes(id);
-            if (checkPrevious) {
-               return previous.filter((idItem) => idItem !== id)
-            } else {
-                
-                return [...previous, id]
+    const state_confirm = (id, state) => {
+        setStateCard((previous) => (
+            {  
+                ...previous,
+                [id] : {...previous[id], confirms: state}
             }
-        })
-    })
+        ))
+    }
+
+    const state_canceled =(id, state) => {
+        setStateCard((previous) => ({
+            ...previous, 
+            [id]: {...previous[id], canceled: state}
+        }))
+    }
+
+
+   
+
+    // const handleCheckboxChange = ((id) => {
+    
+    //     setListId((previous) => {
+    //         const checkPrevious = previous.includes(id);
+    //         if (checkPrevious) {
+    //            return previous.filter((idItem) => idItem !== id)
+    //         } else {
+                
+    //             return [...previous, id]
+    //         }
+    //     })
+    // })
     
     useEffect(() => {
         console.log('Listas de id:', listId)
@@ -82,8 +84,8 @@ function ProjectCardSchedings() {
             <ProjectSwitch                    
                     ok={true}
                     text='Confirmado'
-                    confirm={stateSwitch}
-                    canceled={stateCanceled}
+                    confirm={state_confirm(data.id)}
+                    canceled={state_canceled(data.id)}
                     defaults={stateDefault}
                     handleCheckBox={handleCheckboxChange} 
                     listId={data.id }
