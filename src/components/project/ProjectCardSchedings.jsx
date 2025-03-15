@@ -61,10 +61,10 @@ function ProjectCardSchedings() {
     
     {scheding.map((data) => (   
 
-       const stateCard = stateCards[data.id] 
+       const stateCard = stateCards[data.id] || {};
 
         <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
-            { stateCard.hasOwnProperty(data.id) && (console.log('ID encontrado no objeto'))}
+           
             <h3>{data.time}</h3>
             <p>    
                 Procedimento: {data.services}       
