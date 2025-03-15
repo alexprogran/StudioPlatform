@@ -13,7 +13,7 @@ function ProjectCardSchedings() {
         setStateCard((previous) => (
             {  
                 ...previous,
-                [id] : {...previous[id], confirms: state}
+                [id] : {...previous[id], confirm: state}
             }
         ))
     }
@@ -60,7 +60,7 @@ function ProjectCardSchedings() {
     
    
     return  <>    
-    {scheding.map((data) => (         
+    {scheding.map((data) => {
         const stateCard = stateCards[data.id] || {};
         return (
             <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
@@ -90,8 +90,7 @@ function ProjectCardSchedings() {
                 />       
         </div>      
         )
-          
-    ))}
+    } ) }
     
     </>
 }
