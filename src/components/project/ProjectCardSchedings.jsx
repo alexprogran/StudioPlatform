@@ -60,8 +60,8 @@ function ProjectCardSchedings() {
     return  <>
     
     {scheding.map((data) => (        
-        
-        <div  key={data.id}  className={`${styles.card_container}  ${stateCard[data.id] ? (stateCard[data.id].confirm ? styles.confirm : stateCard[data.id].canceled ? styles.canceled : '') : ''}`}>
+        const listId = stateCard.id
+        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.id == data.id ? (stateCard[data.id].confirm ? styles.confirm : stateCard[data.id].canceled ? styles.canceled : '') : ''}`}>
             
             <h3>{data.time}</h3>
             <p>    
