@@ -64,7 +64,6 @@ function ProjectCardSchedings() {
         const stateCard = stateCards[data.id] || {};
         return (
             <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
-           
             <h3>{data.time}</h3>
             <p>    
                 Procedimento: {data.services}       
