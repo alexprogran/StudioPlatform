@@ -60,9 +60,9 @@ function ProjectCardSchedings() {
     return  <>
     
     {scheding.map((data) => (        
-        const listId = stateCard.id
-        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.id == data.id ? (stateCard[data.id].confirm ? styles.confirm : stateCard[data.id].canceled ? styles.canceled : '') : ''}`}>
-            
+       
+        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.hasOwnProperty(data.id)? (stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : '') : ''}`}>
+            { stateCard.hasOwnProperty(data.id) && (console.log('ID encontrado no objeto'))}
             <h3>{data.time}</h3>
             <p>    
                 Procedimento: {data.services}       
