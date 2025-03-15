@@ -1,7 +1,7 @@
 import styles from './ProjectCardSchedings.module.css';
 import ProjectSwitch from './ProjectSwitch';
 import PropTypes from 'prop-types';
-import {useState, useEffect, useDeferredValue} from 'react';
+import {useState, useEffect} from 'react';
 
 function ProjectCardSchedings() {
 
@@ -56,18 +56,15 @@ function ProjectCardSchedings() {
         .then((data) => {
             setScheding(data)   
         })               
-    },[])
-
-    
-  
+    },[])  
     return  <>
     
     {scheding.map((data) => (        
         
-        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.includes(data.id) ? (stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : '') : ''}`}>
+        <div  key={data.id}  className={`${styles.card_container}  ${stateCard[data.id] ? (stateCard[data.id].confirm ? styles.confirm : stateCard[data.id].canceled ? styles.canceled : '') : ''}`}>
             
             <h3>{data.time}</h3>
-            <p>
+            <p>    
                 Procedimento: {data.services}       
             </p>
             <p>
