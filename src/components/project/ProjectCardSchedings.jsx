@@ -6,8 +6,8 @@ import {useState, useEffect} from 'react';
 function ProjectCardSchedings() {
 
     const[scheding, setScheding] = useState([]);
-    const [stateCard, setStateCard] = useState({});
-   
+    const [stateCards, setStateCard] = useState({});
+   s
 
     const stateConfirm = (id, state) => {
         setStateCard((previous) => (
@@ -26,7 +26,7 @@ function ProjectCardSchedings() {
     }
 
     useEffect(() => {
-        console.log('Object statCard:', stateCard )
+        console.log('Object statCard:', stateCards )
     })
    
 
@@ -59,9 +59,11 @@ function ProjectCardSchedings() {
     },[])  
     return  <>
     
-    {scheding.map((data) => (        
-       
-        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.hasOwnProperty(data.id)? (stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : '') : ''}`}>
+    {scheding.map((data) => (   
+
+       const stateCard = stateCards[data.id] 
+
+        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
             { stateCard.hasOwnProperty(data.id) && (console.log('ID encontrado no objeto'))}
             <h3>{data.time}</h3>
             <p>    
