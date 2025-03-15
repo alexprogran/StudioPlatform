@@ -7,7 +7,7 @@ function ProjectCardSchedings() {
 
     const[scheding, setScheding] = useState([]);
     const [stateCards, setStateCard] = useState({});
-   s
+   
 
     const stateConfirm = (id, state) => {
         setStateCard((previous) => (
@@ -56,14 +56,14 @@ function ProjectCardSchedings() {
         .then((data) => {
             setScheding(data)   
         })               
-    },[])  
-    return  <>
+    },[]) 
     
-    {scheding.map((data) => (   
-
-       const stateCard = stateCards[data.id] || {};
-
-        <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
+   
+    return  <>    
+    {scheding.map((data) => (         
+        const stateCard = stateCards[data.id] || {};
+        return (
+            <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
            
             <h3>{data.time}</h3>
             <p>    
@@ -87,21 +87,11 @@ function ProjectCardSchedings() {
                     annulled={true}                 
                     text='Cancelado'
                     confirm={(state) => stateConfirm(data.id, state)}                  
-                    canceled={(state) => stateCanceled(data.id, state)}   
-                 
-                />
-
-            
-
-                
-            
-            
+                    canceled={(state) => stateCanceled(data.id, state)}        
+                />       
+        </div>      
+        )
           
-           
-                
-               
-           
-        </div>        
     ))}
     
     </>
