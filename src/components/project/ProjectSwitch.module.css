@@ -115,7 +115,9 @@ z-index: 1;
 .confirm input:checked + span {
     /* background-color:rgb(5, 164, 23) ; */
     background-color: rgb(97, 248, 110)
-}
+} 
+
+
 
 .confirm input:checked + span:before, 
 .canceled input:checked + span:before {
