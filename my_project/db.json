@@ -1,0 +1,86 @@
+{
+  "scheduling": [
+    {
+      "id": "321b",
+      "date": "2025-03-17",
+      "time": "10:30",
+      "profissional": "Wesley",
+      "service": "corte de cabelo"
+    },
+    {
+      "id": "984a",
+      "date": "2025-03-17",
+      "time": "10:35",
+      "profissional": "Wesley",
+      "service": "corte de cabelo"
+    },
+    {
+      "id": "36c2",
+      "date": "2025-03-17",
+      "time": "11:04",
+      "professional": "",
+      "service": "Manicure",
+      "profissional": "Wesley"
+    },
+    {
+      "id": "9934",
+      "date": "2025-03-18",
+      "time": "11:07",
+      "professional": "Wesley",
+      "service": "Maquiagem"
+    },
+    {
+      "id": "fdf5",
+      "date": "2025-03-17",
+      "time": "12:20",
+      "professional": "Wesley",
+      "service": "Maquiagem"
+    },
+    {
+      "id": "58ff",
+      "date": "2025-03-17",
+      "time": "16:02",
+      "professional": "Wesley",
+      "service": "corte de cabelo"
+    }
+  ],
+  "categoria": [
+    {
+      "id": "1",
+      "nome": "Manicure"
+    },
+    {
+      "id": "2",
+      "nome": "Pedicure"
+    },
+    {
+      "id": "3",
+      "nome": "Maquiagem"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "nome": "corte de cabelo"
+    },
+    {
+      "id": "2",
+      "nome": "Maquiagem"
+    },
+    {
+      "id": "3",
+      "nome": "Manicure"
+    }
+  ],
+  "data_user": [
+    {
+      "id": "c2fe",
+      "name": "Mariasinha ",
+      "phone": "99-9999-99999",
+      "email": "mariasinha@email.com"
+    },
+    {
+      "id": "6eea"
+    }
+  ]
+}

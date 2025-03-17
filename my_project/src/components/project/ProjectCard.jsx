@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+// import {useState, useEffect} from 'react';
 import { FaCheck, FaTrash } from 'react-icons/fa';
 import Button from '../form/Button';
 import styles from './ProjectCard.module.css';
@@ -6,33 +6,32 @@ import PropTypes from 'prop-types';
 
 
 
-function Reagend()  {
-    const[scheduling, setScheduling]  = useState([])
+function Reagend({data})  {
+    // const[scheduling, setScheduling]  = useState({})
 
-   useEffect(() =>{
-    fetch('http://localhost:5000/scheduling',{
-        method : 'GET', 
-        headers: {
-            'content-type': 'application/json'
-        }        
-    })
-    .then((response) => response.json())
-    .then((data) => setScheduling(data))
-    .catch((error) => console.log(error))
-    console.log(scheduling)
-
-   },[])
+//    useEffect(() =>{
+//     fetch('http://localhost:5000/scheduling',{
+//         method : 'GET', 
+//         headers: {
+//             'content-type': 'application/json'
+//         }        
+//     })
+//     .then((response) => response.json())
+//     .then((data) => setScheduling(data))
+//     .catch((error) => console.log(error))
+//     },[])
+    console.log('ID advindo do pai: ', data.id)
     return <>
        <div className={styles.card_container}>
         <h2>Seu agendameto</h2>
        <div className={styles.list} >
        <ul>
-        {scheduling.map((data) => (
-            <li key={data.id}>
-            <p>Data: {data.date}</p>
-            <p>Horário: {data.time}</p>
-            <p>Profissional: {data.profissional}</p>
-            <p>Procedimento: {data.service}</p>
+        {data.map((datas, index) => (
+            <li key={index}>
+            <p>Data: {datas.date}</p>
+            <p>Horário: {datas.time}</p>
+            <p>Profissional: {datas.professional}</p>
+            <p>Procedimento: {datas.service}</p>
         </li>
         ))}
        </ul>
@@ -67,4 +66,5 @@ export default Reagend
 
 Reagend.propTypes = {
     dataScheduling: PropTypes.object,
+    data: PropTypes.array,
 }

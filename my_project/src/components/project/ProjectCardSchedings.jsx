@@ -7,7 +7,11 @@ function ProjectCardSchedings() {
 
     const[scheding, setScheding] = useState([]);
     const [stateCards, setStateCard] = useState({});
-   
+    // const [countItens, setCountItens]  = useState(false)
+
+    
+
+ 
 
     const stateConfirm = (id, state) => {
         setStateCard((previous) => (
@@ -25,25 +29,18 @@ function ProjectCardSchedings() {
         }))
     }
 
-    useEffect(() => {
-        console.log('Object statCard:', stateCards )
-    })
-   
 
-    // const handleCheckboxChange = ((id) => {
-    
-    //     setListId((previous) => {
-    //         const checkPrevious = previous.includes(id);
-    //         if (checkPrevious) {
-    //            return previous.filter((idItem) => idItem !== id)
-    //         } else {
-                
-    //             return [...previous, id]
-    //         }
-    //     })
-    // })
-    
+
+
+    // useEffect(() => {
+    //     console.log('Object statCard:', stateCards )
+    // },[se])   
   
+    // useEffect(() => {
+    //     for (let i ; scheding.length; i++) {
+    //         console.log('Constate ,' , i)
+    //     }
+    // })
    
     useEffect(() => {
         fetch('http://localhost:5000/scheduling', {
@@ -66,10 +63,10 @@ function ProjectCardSchedings() {
             <div  key={data.id}  className={`${styles.card_container}  ${stateCard.confirm ? styles.confirm : stateCard.canceled ? styles.canceled : ''}`}>
             <h3>{data.time}</h3>
             <p>    
-                Procedimento: {data.services}       
+                Procedimento: {data.service}       
             </p>
             <p>
-                Profissional: {data.profissional}
+                Profissional: {data.professional}
             </p> 
 
             {/* <div className={styles.switch_container}> </div> */}
