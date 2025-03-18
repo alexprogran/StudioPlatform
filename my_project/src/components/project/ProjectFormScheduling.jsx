@@ -1,11 +1,11 @@
 import { useState,useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import Inputs from '../form/Inputs';
 import Select from '../form/Select';
 import styles from './ProjectFormScheduling.module.css';
 import Button from '../form/Button';
 import Alert from '../layout/Alert';
 import Card from './ProjectCard';
+
 
 function ProjectFormScheduling() {
 
@@ -16,8 +16,7 @@ function ProjectFormScheduling() {
         professional: '',
         service: '',
     })
-    const [cloneScheduling, setCloneSheduling]  =  useState([])
-    const [listScheduling, setListScheduling] = useState([])
+    const [get, setGet] = useState(false);
     const [message, setMessage] = useState(false)
     const [card, setCard] = useState('')
 
@@ -46,19 +45,10 @@ function ProjectFormScheduling() {
             },
             body: JSON.stringify(scheduling)
         })
-        .then((response) => response.json())
-        .then((data) => {
-            
-            console.log(data)
-           
-            // setScheduling({})
-            
-        })
+        .then((response) => response.json())        
         
         .catch((error) => console.log('Erro no registro do agendamento: ',error));
-    }
-    console.log(scheduling)
-    
+    }      
     
     function handleOnChange(e) {
         setScheduling({...scheduling,[e.target.name]: e.target.value})
@@ -66,14 +56,11 @@ function ProjectFormScheduling() {
     
     function handleSelect(e) {
         setScheduling({...scheduling,[e.target.name]: e.target.value})
-    }
-    
+    } 
 
     function submit(e){
         e.preventDefault()
-        createPost(scheduling)
-        setListScheduling([...listScheduling, scheduling])
-        setCloneSheduling([...cloneScheduling, scheduling])
+        // createPost(scheduling)
         setScheduling({
             date: '',
             time: '', 
@@ -82,6 +69,7 @@ function ProjectFormScheduling() {
         })
         setMessage(true)  
         setCard('open')
+        setGet(true)
     }  
 
     useEffect(() => {
@@ -141,9 +129,9 @@ function ProjectFormScheduling() {
             text='Agendar'
             />
         </form>
-      
+       
         <div className={`${styles.card_container} ${card ==='open' ? styles.open:'' }`}>
-        <Card  data={cloneScheduling}/>
+        <Card get={get} />
         </div>
         
     </div>
@@ -152,6 +140,3 @@ function ProjectFormScheduling() {
 }
 export default ProjectFormScheduling
 
-// ProjectFormScheduling.propTypes = {
-//     schedulingData: PropTypes.object
-// }

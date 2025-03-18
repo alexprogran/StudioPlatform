@@ -1,4 +1,4 @@
-// import {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import { FaCheck, FaTrash } from 'react-icons/fa';
 import Button from '../form/Button';
 import styles from './ProjectCard.module.css';
@@ -6,27 +6,27 @@ import PropTypes from 'prop-types';
 
 
 
-function Reagend({data})  {
-    // const[scheduling, setScheduling]  = useState({})
+function ProjectCard({get})  {
+    const[scheduling, setScheduling]  = useState([])
 
-//    useEffect(() =>{
-//     fetch('http://localhost:5000/scheduling',{
-//         method : 'GET', 
-//         headers: {
-//             'content-type': 'application/json'
-//         }        
-//     })
-//     .then((response) => response.json())
-//     .then((data) => setScheduling(data))
-//     .catch((error) => console.log(error))
-//     },[])
-    console.log('ID advindo do pai: ', data.id)
+   useEffect(() =>{
+    fetch('http://localhost:5000/scheduling',{
+        method : 'GET', 
+        headers: {
+            'content-type': 'application/json'
+        }        
+    })
+    .then((response) => response.json())
+    .then((data) => setScheduling(data))
+    .catch((error) => console.log(error))
+    },[get])
+   
     return <>
        <div className={styles.card_container}>
         <h2>Seu agendameto</h2>
        <div className={styles.list} >
        <ul>
-        {data.map((datas, index) => (
+        {scheduling.map((datas, index) => (
             <li key={index}>
             <p>Data: {datas.date}</p>
             <p>Horário: {datas.time}</p>
@@ -41,20 +41,17 @@ function Reagend({data})  {
             <div className={`${styles.icons} ${styles.icon_float}`}>
                 <FaCheck /> 
             </div>
-            <div className={styles.button_fatrash}>                
-                <div>
+            <div className={styles.button_fatrash}> 
+               
                 <Button  
                     className={styles.btn}
                     type='submit'                 
                     text='Reagendamento'
-                    classDinamic='btn_m'
+                    classDinamic='btn_p'
                  />
-                </div>
-                <div className={styles.fatrash_container}>
-                <FaTrash className={styles.icons} />
-                </div>
-               
-           
+
+                
+                <FaTrash className={`${styles.icons} `} />
             </div>
            
             </div>
@@ -62,9 +59,9 @@ function Reagend({data})  {
        </div>
     </>
 }
-export default Reagend
+export default ProjectCard
 
-Reagend.propTypes = {
+ProjectCard.propTypes = {
     dataScheduling: PropTypes.object,
-    data: PropTypes.array,
+    get: PropTypes.bool,
 }
