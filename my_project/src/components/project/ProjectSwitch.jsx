@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import styles from './ProjectSwitch.module.css';
 import PropTypes from 'prop-types';
 
@@ -17,22 +17,30 @@ function Switch( { text,confirm, ok, canceled}) {
         }else {
             setSwitchCanceled((prev) => !prev);
             canceled(!switchCanceled);
-          
-        }}       
-             
         
-        // useEffect(() => {
-        //         if(switchConfirm) {
-        //             confirm(switchConfirm)
-        //             // canceled(!switchConfirm)
-        //         }
-        //         if(switchCanceled){
-        //             canceled(switchCanceled)
-        //             // confirm(!switchCanceled)
-        //         }
-        //         console.log('Estado do Canceled:', switchCanceled)           
-               
-        // },[switchConfirm, switchCanceled])
+        
+        if(switchConfirm) {
+            setSwitchCanceled(false)
+        }
+        if(switchCanceled){
+            setSwitchConfirm(false)
+        }  
+       
+            
+
+        }} 
+        
+        
+    // useEffect( () => {
+    //     if(switchConfirm) {
+    //         setSwitchCanceled(false)
+    //     }
+    //     if(switchCanceled){
+    //         setSwitchConfirm(false)
+    //     }    
+    // },[switchConfirm,switchCanceled])
+     
+       
 
    
     return  <>
