@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 
-function Reagend()  {
+function ProjectCard({get})  {
     const[scheduling, setScheduling]  = useState([])
 
    useEffect(() =>{
@@ -19,20 +19,19 @@ function Reagend()  {
     .then((response) => response.json())
     .then((data) => setScheduling(data))
     .catch((error) => console.log(error))
-    console.log(scheduling)
-
-   },[])
+    },[get])
+   
     return <>
        <div className={styles.card_container}>
         <h2>Seu agendameto</h2>
        <div className={styles.list} >
        <ul>
-        {scheduling.map((data) => (
-            <li key={data.id}>
-            <p>Data: {data.date}</p>
-            <p>Horário: {data.time}</p>
-            <p>Profissional: {data.profissional}</p>
-            <p>Procedimento: {data.service}</p>
+        {scheduling.map((datas, index) => (
+            <li key={index}>
+            <p>Data: {datas.date}</p>
+            <p>Horário: {datas.time}</p>
+            <p>Profissional: {datas.professional}</p>
+            <p>Procedimento: {datas.service}</p>
         </li>
         ))}
        </ul>
@@ -42,20 +41,17 @@ function Reagend()  {
             <div className={`${styles.icons} ${styles.icon_float}`}>
                 <FaCheck /> 
             </div>
-            <div className={styles.button_fatrash}>                
-                <div>
+            <div className={styles.button_fatrash}> 
+               
                 <Button  
                     className={styles.btn}
                     type='submit'                 
                     text='Reagendamento'
-                    classDinamic='btn_m'
+                    classDinamic='btn_p'
                  />
-                </div>
-                <div className={styles.fatrash_container}>
-                <FaTrash className={styles.icons} />
-                </div>
-               
-           
+
+                
+                <FaTrash className={`${styles.icons} `} />
             </div>
            
             </div>
@@ -63,8 +59,9 @@ function Reagend()  {
        </div>
     </>
 }
-export default Reagend
+export default ProjectCard
 
-Reagend.propTypes = {
+ProjectCard.propTypes = {
     dataScheduling: PropTypes.object,
+    get: PropTypes.bool,
 }

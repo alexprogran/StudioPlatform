@@ -1,11 +1,13 @@
 .container {
-    width: 90%;
-    height: 20%;
-    top: 65%;
     position: absolute;
+    width: 90%;
+    height: 50%;
+    top: 65%;   
     display: flex;
-    align-items: center;   
+    align-items: center;
 }
+
+
 /*  
  .checkbox_confirm{ 
     position: absolute;
@@ -32,22 +34,26 @@
     border-radius: 25px;
 }  */
 
-.container_switch {
+/* .container_switch {
+    border: 1px solid green;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-}  
+}   */
 
 .container_switch p{
     color: #766b6b;
 }
 
 .container_switch .green {
-    /* color: rgb(97, 248, 110) */
-    color:  rgb(97, 248, 110);
+     color: rgb(97, 248, 110)    
+} 
+
+.container_switch .red {
+    color:  rgb(255, 69, 69);  ;
 }
 
 .container_switch input{
@@ -57,18 +63,20 @@
 .container_switch span {
     display: inline-block;
     position: absolute;
-    top: 25%;
     left: 0;
     width: 2em; 
     height: 12px;
     border-radius: 15px;
-    background-color: rgb(15, 161, 201); 
+    background-color: #766b6b;
+    cursor: pointer;
+    /* background-color: rgb(15, 161, 201); 
+    */
 }
 
 .p_absolut {
     display: inline-block;
     position: absolute;
-    top: 10%;
+    top:0;
     left: 25% ;
 }
 
@@ -81,8 +89,9 @@
     transform: translateY(-10%);
     border-radius: 50%;
     transition: .4s;
-
 }
+
+
 /* .container_switch:before {
     content: '';
     position: absolute;  
@@ -95,40 +104,47 @@
     transition: .4s;
 }  */
 
-      
-.checkbox_confirm input:checked + span {
-    /* background-color:rgb(5, 164, 23) ; */
-    background-color: rgb(97, 248, 110)
+.confirm span{
+top: 7%;
+/* cursor: pointer; */
+z-index: 1;
 }
 
-.checkbox_confirm input:checked + span:before {
+
+      
+.confirm input:checked + span {
+    /* background-color:rgb(5, 164, 23) ; */
+    background-color: rgb(97, 248, 110)
+} 
+
+
+
+.confirm input:checked + span:before, 
+.canceled input:checked + span:before {
 transform: translateX(15px);
 }
 
-.checkbox_canceled{ 
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 21px;
-    cursor: pointer;
-    bottom: .5em;
-    
+.canceled input:checked + span{ 
+    background-color: rgb(241, 76, 76);
+        
 }
 
-.checkbox_canceled p {
+.canceled p {
     position: absolute;
     right: 50%;
+    top: 30%;
+
 
 }
 
-.checkbox_canceled span {
+.canceled span {
     position: absolute;   
-    top: 0;
+    top: 40%;
     right: 87%;
     left: 0;
     bottom: 1px;
-    background-color:rgb(15, 161, 201);
     border-radius: 25px;
+    /* cursor: pointer; */
 }
 
 .checkbox_canceled span:before {

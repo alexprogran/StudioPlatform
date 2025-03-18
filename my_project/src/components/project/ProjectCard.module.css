@@ -1,17 +1,18 @@
 .card_container {
-position: relative;
-display: flex;
-align-items: center;
-flex-direction: column;
-font-size: 0.9vw;
-width: 100%;
-height: 100%;
-border: 1px solid rgb(182, 125, 39);
-border-radius: 5px;
-overflow: hidden;
-box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9vw;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid rgb(182, 125, 39);
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
-
+ 
 
 .card_container h2 {
     text-align: center;
@@ -24,6 +25,7 @@ box-sizing: border-box;
 
 .card_container p {
     margin-bottom: .5em;
+  padding-left: 1em;
     color: #fff;
 }
 
@@ -61,45 +63,23 @@ box-sizing: border-box;
     top: 15%;
 }
 
-.icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: .2em;
-    background-color: #1bcd15;
-    color: #fff;
-    width: .8em;
-    height: .8em;
-    border-radius: 50%;
-    font-size: 2em;
-}
-
 .button_fatrash {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: auto;
+    align-items: center;
+    width: 40%;
+    margin: auto;    
 }
 
-.fatrash_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    width: 50%;  
-    color: #fff;    
-}
-
-.fatrash_container .icons{
+.button_fatrash .icons{
     color: #fff;
-    width: 20%;
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: black;
-    cursor: pointer;
-    margin-top: 1em;
+    cursor: pointer;   
+    margin-top: 10px;
 }
 
-.fatrash_container .icons:hover{
+.button_fatrash .icons:hover{
     transform: scale(1.1);
-    color: red;
+    color: rgb(241, 83, 83);
 }
 

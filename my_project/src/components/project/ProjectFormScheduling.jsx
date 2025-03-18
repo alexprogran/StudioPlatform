@@ -1,5 +1,4 @@
 import { useState,useEffect } from 'react';
-import PropTypes from 'prop-types';
 import Inputs from '../form/Inputs';
 import Select from '../form/Select';
 import styles from './ProjectFormScheduling.module.css';
@@ -7,10 +6,17 @@ import Button from '../form/Button';
 import Alert from '../layout/Alert';
 import Card from './ProjectCard';
 
-function ProjectFormScheduling({schedulingData}) {
+
+function ProjectFormScheduling() {
 
     const [services, setServices] = useState([])
-    const [scheduling, setScheduling] = useState(schedulingData || {})
+    const [scheduling, setScheduling] = useState({
+        date: '',
+        time: '',
+        professional: '',
+        service: '',
+    })
+    const [get, setGet] = useState(false);
     const [message, setMessage] = useState(false)
     const [card, setCard] = useState('')
 
@@ -27,8 +33,9 @@ function ProjectFormScheduling({schedulingData}) {
             setServices(data)
         })
         .catch((error) => console.log('Erro no carregamento dos serviços: ', error))
+       
         },[])
-    0
+
     function createPost(scheduling) {
 
         fetch('http://localhost:5000/scheduling',{
@@ -38,31 +45,31 @@ function ProjectFormScheduling({schedulingData}) {
             },
             body: JSON.stringify(scheduling)
         })
-        .then((response) => response.json())
-        .then((data) => {
-            
-            console.log(data)
-            setScheduling({})
-            
-        })
+        .then((response) => response.json())        
         
         .catch((error) => console.log('Erro no registro do agendamento: ',error));
-    }
-
+    }      
+    
     function handleOnChange(e) {
         setScheduling({...scheduling,[e.target.name]: e.target.value})
     }
     
     function handleSelect(e) {
-        setScheduling({...scheduling,service:e.target.value})
-    }
-    
+        setScheduling({...scheduling,[e.target.name]: e.target.value})
+    } 
 
     function submit(e){
         e.preventDefault()
-        createPost(scheduling)
+        // createPost(scheduling)
+        setScheduling({
+            date: '',
+            time: '', 
+            professional: '',
+            service: '',
+        })
         setMessage(true)  
         setCard('open')
+        setGet(true)
     }  
 
     useEffect(() => {
@@ -101,12 +108,12 @@ function ProjectFormScheduling({schedulingData}) {
             value={scheduling.time || ""}
             />
             <Inputs 
-            name='profissional'
+            name='professional'
             type='text'
             text='Informe o profissional'
             placeholder='Seu profissional'
             handleOnChange={handleOnChange}
-            value={scheduling.profissional || ""}
+            value={scheduling.professional || ""}
             />
     
             <Select
@@ -114,7 +121,7 @@ function ProjectFormScheduling({schedulingData}) {
             name='service'
             options={services}
             handleOnChange={handleSelect}  
-            value={scheduling.service || ""} 
+            value={scheduling.service|| ""} 
             />
     
             <Button 
@@ -122,8 +129,9 @@ function ProjectFormScheduling({schedulingData}) {
             text='Agendar'
             />
         </form>
+       
         <div className={`${styles.card_container} ${card ==='open' ? styles.open:'' }`}>
-            <Card />
+        <Card get={get} />
         </div>
         
     </div>
@@ -132,6 +140,3 @@ function ProjectFormScheduling({schedulingData}) {
 }
 export default ProjectFormScheduling
 
-ProjectFormScheduling.propTypes = {
-    schedulingData: PropTypes.object
-}
