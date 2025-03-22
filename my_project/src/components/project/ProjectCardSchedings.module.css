@@ -1,3 +1,33 @@
+.container {
+width: 100%;
+height: 500px;
+}
+
+.list_schedings {
+    position: relative;
+    display: flex;
+    width: 85%;
+    height: 40%;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+    border-top: 1px solid rgb(164, 118, 50);    
+    border-left: 5px solid  rgb(253, 128, 18);
+}
+
+.list_schedings p{
+    color: #fff;
+}
+.date {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+}
+
+.date p{
+    color: rgb(255, 155, 0);
+}
 
 .card_container {
     position: relative;
@@ -10,12 +40,12 @@
     height: 180px;
     background-color: rgba(69, 64, 64, 0.3);
     border-left: 3px solid rgb(15, 161, 201);
+
 }
 
 .card_container:hover {
     background-color: rgba(69, 64, 64, 0.5 );
 }
-
 
 .card_container p {
     margin-bottom: 0.5em;
@@ -26,7 +56,6 @@
     padding-bottom: 1em;
     text-align: center;
     color: rgb(170, 225, 240);
-    /* color: rgb(255, 155, 0); */
 }
 
 .gray {
@@ -34,26 +63,20 @@
     color: #7b7b7b;
 }
 
-/* .green{
-    color: rgb(170, 229, 175) ;
-} */
 
 .checkbox_container{ 
     display: flex;
     align-items: center;
     justify-content: center;   
     height: 100%;
-    /* cursor: pointer; */
 }  
 
 .confirm{
-    /* border-left: 3px solid rgb(15, 201, 31); */
     border-left: 3px solid rgb(97, 248, 110);
-    /* cursor: pointer; */
+    
 } 
 
 .confirm p{
-    /* color: rgb(84, 174, 91) ; */
     color: rgb(133, 175, 137) ;
 }
 
@@ -61,28 +84,8 @@
     color: rgb(153, 236, 160) ;
 }
 
-/* .switch_container {
-    position: relative;
-    border: 1px solid red;
-    display: flex;
-    width: 100%;
-    height: 500px;
-    align-items: center;
-    gap: 1em;
-    margin-top: 2em;
-}
-
-.switch_container p{
-    color: #7b7b7b;
-}
-
-.switch_container .p{
-    color: rgb(84, 174, 91) ;
-} */
-
 .canceled {
     border-left: 3px solid rgb(251, 121, 121);
-    /* background-color:rgba(62, 22, 22, 0.5); */
 }
 
 .canceled p{
@@ -96,4 +99,15 @@
 .canceled h3 {
     color: rgb(255, 142, 142)
 }
-   
+
+.position_confirm {
+    top: 70%;   
+    left: 5%;
+    position: absolute;
+}
+
+.position_canceled {
+    top: 85%;   
+    left: 5%;
+    position: absolute;
+}

@@ -60,7 +60,7 @@ function ProjectFormScheduling() {
 
     function submit(e){
         e.preventDefault()
-        // createPost(scheduling)
+        createPost(scheduling)
         setScheduling({
             date: '',
             time: '', 
