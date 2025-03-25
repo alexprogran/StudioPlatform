@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+
 import { FaCheck, FaTrash } from 'react-icons/fa';
 import Button from '../form/Button';
 import styles from './ProjectCard.module.css';
@@ -7,26 +7,13 @@ import PropTypes from 'prop-types';
 
 
 function ProjectCard({get})  {
-    const[scheduling, setScheduling]  = useState([])
-
-   useEffect(() =>{
-    fetch('http://localhost:5000/scheduling',{
-        method : 'GET', 
-        headers: {
-            'content-type': 'application/json'
-        }        
-    })
-    .then((response) => response.json())
-    .then((data) => setScheduling(data))
-    .catch((error) => console.log(error))
-    },[get])
-   
-    return <>
+ 
+       return <>
        <div className={styles.card_container}>
         <h2>Seu agendameto</h2>
        <div className={styles.list} >
        <ul>
-        {scheduling.map((datas, index) => (
+        {get.map((datas, index) => (
             <li key={index}>
             <p>Data: {datas.date}</p>
             <p>Horário: {datas.time}</p>
@@ -49,8 +36,7 @@ function ProjectCard({get})  {
                     text='Reagendamento'
                     classDinamic='btn_p'
                  />
-
-                
+                                 
                 <FaTrash className={`${styles.icons} `} />
             </div>
            
@@ -63,5 +49,5 @@ export default ProjectCard
 
 ProjectCard.propTypes = {
     dataScheduling: PropTypes.object,
-    get: PropTypes.bool,
+    get: PropTypes.array,
 }

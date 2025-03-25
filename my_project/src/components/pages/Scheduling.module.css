@@ -1,5 +1,4 @@
 .scheduling_container {
-    border: 1px solid green;
     position: relative;
     display: flex;
     flex-direction: column;

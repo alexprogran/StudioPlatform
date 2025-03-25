@@ -25,7 +25,7 @@ function Navibar() {
     <MdMenu className={styles.menu} onClick={openMenu}/>
     <nav className={styles.navibar}>          
           <ul>
-              <li><Link to='/'>Início</Link></li>
+              <li><Link to='/'>Home</Link></li>
               <li><Link to='/contact'>Contato</Link></li>
               <li><Link to='/service'>Serviços</Link></li>
               <li><Link to='/scheduling'>Agendamento</Link></li>
