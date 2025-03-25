@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import { FaCheck, FaTrash } from 'react-icons/fa';
 import Button from '../form/Button';
 import styles from './ProjectCard.module.css';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; 
 
 
 

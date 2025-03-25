@@ -3,6 +3,7 @@ import Container from "../layout/Container"
 import styles from './Services.module.css';
 import PropTypes from 'prop-types';
 import { Link } from "react-router";
+import Footer from "../layout/Footer";
 
 function Services() {
     const [categories, setCategories] = useState([])
@@ -24,8 +25,10 @@ function Services() {
                     <li key={categoria.id}><Link to='#'>{categoria.nome}</Link></li>
                 ))}
             </ul>
-    
+            <Footer visible={true} />
         </div>
+
+        
     </Container>
     </>
 }

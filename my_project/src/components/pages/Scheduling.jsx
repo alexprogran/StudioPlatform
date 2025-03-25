@@ -3,6 +3,7 @@ import styles from './Scheduling.module.css';
 import ProjectLogo from '../project/ProjectLogo';
 import ProjectFormScheduling from '../project/ProjectFormScheduling';
 import ProjectInforms from '../project/ProjectInforms';
+import Footer from '../layout/Footer';
 
 
 function Scheduling() {
@@ -25,6 +26,7 @@ function Scheduling() {
             <ProjectLogo /> 
             <h2>Realize seu agendamento!</h2>      
             <ProjectFormScheduling />
+            <Footer visible={true} />
         
         </div>
 

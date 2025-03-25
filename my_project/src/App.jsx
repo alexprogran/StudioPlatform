@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router';
 import Navibar from './components/layout/Navibar';
-import Footer from './components/layout/Footer';
+// import Footer from './components/layout/Footer';
 import Container from './components/layout/Container';
 import Home from  './components/pages/Home';
 import Contact from './components/pages/Contact';
@@ -13,7 +13,6 @@ function App() {
   return <>
   <Router>
   <Navibar />
-  {/* <Side /> */}
   <Container customClass="min-height border-top">
   <Routes>
       <Route path='/' element={<Home />} />
@@ -23,7 +22,7 @@ function App() {
       <Route path='/schedings' element={<Schedigns/>} /> 
     </Routes>
     </Container>
-  <Footer />
+  {/* <Footer /> */}
   </Router>
 
   </>

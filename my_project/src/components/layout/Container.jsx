@@ -4,15 +4,9 @@ import PropTypes from 'prop-types';
 
 
 function Container({children, customClass})  {
-
-    const customClasses = customClass
-    ? customClass.split(' ').map(cls => style[cls]).join(' ')
-    : '';
     
     return <>
-    <div className ={`${style.container} ${customClasses}`}>
-
-        
+    <div className ={`${style.container} ${customClass}`}>        
         {children}
     </div>
     
