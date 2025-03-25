@@ -5,8 +5,7 @@ import { MdMenu } from "react-icons/md";
 import ProjectSideBar from '../project/ProjectSidBar';
 
 function Navibar() {
-  const [open, setOpen] = useState('');
-  // const [closed, setClosed] = useState(''); 
+  const [open, setOpen] = useState(''); 
 
     function openMenu() {
       setOpen('open')          
@@ -26,7 +25,7 @@ function Navibar() {
     <MdMenu className={styles.menu} onClick={openMenu}/>
     <nav className={styles.navibar}>          
           <ul>
-              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/'>Início</Link></li>
               <li><Link to='/contact'>Contato</Link></li>
               <li><Link to='/service'>Serviços</Link></li>
               <li><Link to='/scheduling'>Agendamento</Link></li>

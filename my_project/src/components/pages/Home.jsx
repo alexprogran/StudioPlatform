@@ -1,6 +1,7 @@
 import styles from './Home.module.css';
 import Container from '../layout/Container';
 import ProjectLogo from '../project/ProjectLogo';
+import Footer from '../layout/Footer';
 
 
 function Home() {
@@ -16,7 +17,8 @@ function Home() {
             <img src="img/salao-de-beleza.jpg" alt="Imagem salão" />
             <img src='img/images.jpg' alt="Imagem corte cabelo" />
             <img className={styles.manicure} src="img/pedicure.jpg" alt="Imagem manicure" />
-            </div>    
+            </div> 
+            <Footer visible={true} />   
 
         </div>
    </Container>

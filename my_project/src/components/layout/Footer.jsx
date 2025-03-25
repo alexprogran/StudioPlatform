@@ -1,17 +1,20 @@
 import {FaFacebook, FaInstagram, FaLinkedin} from 'react-icons/fa';
 import style from './Footer.module.css';
-import Container from './Container';
+import PropTypes from 'prop-types';
 
-function Footer() {
+function Footer({visible}) {
     return <>
-   <Container customClass='content-center'>
-   <ul className={style.footer}>
-        <li><FaFacebook /></li> 
-        <li><FaInstagram /></li>    
-        <li><FaLinkedin /></li> 
-    </ul>
-   </Container>
+    {visible && (
+     <ul className={style.footer}>
+     <li><FaFacebook /></li> 
+     <li><FaInstagram /></li>    
+     <li><FaLinkedin /></li> 
+    </ul>   
+    )}  
     </>
-
 }
 export default Footer
+
+Footer.propTypes = {
+    visible: PropTypes.bool,
+}

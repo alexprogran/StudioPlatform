@@ -1,16 +1,44 @@
+
 .schedings_container {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
-}
-
-.schedings_container h2 {
-    color: rgb(255, 155, 0);
-    font-size: 2em;
     
 }
+
+.schedings_container p {
+    color: #fff;
+}
+
+.calendar_icons h2 {
+    /* padding: 2em 0 1em; */
+    color: rgb(255, 155, 0);
+    font-size: 2em;    
+}
+
+
+.calendar_icons{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    padding: 0;
+    margin-top: -1em;
+}
+
+
+
+.icons {
+    font-size: 50px;   
+    color: rgb(251, 161, 26);
+    color: #fff; 
+    /* margin-top: .5em;  */
+    margin-left: 5px;  
+}
+
+
 
 
 

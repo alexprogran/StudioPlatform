@@ -1,27 +1,29 @@
+import {FaRegCalendarAlt} from 'react-icons/fa'
 import ProjectLogo from '../project/ProjectLogo';
 import styles from './schedings.module.css';
 import ProjectCardSchedings from '../project/ProjectCardSchedings';
 
+
 function Schedings() {
+    
+    return <> 
 
-    // const listUsedCard = (id) => {
-    //     setUsedCard((prev) =>{
-    //         const checkId = prev.includes(id)
-    //         if(!checkId) {
-    //             [...prev, id]
-    //         }
-    //     })    
-    // }
-
-    return <>
-
+  
+    
     <div className={styles.schedings_container}>    
-    <ProjectLogo />
-
-    <h2>Sua agenda!</h2>
-
-        <ProjectCardSchedings />
+        <ProjectLogo />
+   
+        <div className={styles.calendar_icons}>
+        <h2>Sua agenda</h2>
+        <FaRegCalendarAlt className={styles.icons} />
+        </div>
+       
+       <ProjectCardSchedings />
+          
+         
     </div>
+    {/* <Footer visible={true} /> */}
+ 
 
     </>
 }

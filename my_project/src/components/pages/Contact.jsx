@@ -4,7 +4,7 @@ import Container from '../layout/Container';
 import ProjectFormLogin from '../project/ProjectFormLogin';
 import ProjectLogo from '../project/ProjectLogo';
 import ProjectInforms from '../project/ProjectInforms';
-
+import Footer from '../layout/Footer';
 
 function Contact() { 
 
@@ -38,9 +38,10 @@ function Contact() {
         text='O cadastro dos seus dados se faz necessário para criação da conta e agendamento com a equipe.'
         />
         <h2>Informe seus dados</h2>        
-        <ProjectFormLogin  Post={CreatePost} />
-       
+        <ProjectFormLogin  Post={CreatePost} />        
+        <Footer visible={true} />
     </div>
+
         
     
     </Container>

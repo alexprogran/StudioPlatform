@@ -69,6 +69,7 @@ function ProjectCardSchedings() {
                 }`}
               >
                 <h3>{data.time}</h3>
+                <p>Data: {data.date}</p>
                 <p>Procedimento: {data.service}</p>
                 <p>Profissional: {data.professional}</p>
 
@@ -92,7 +93,7 @@ function ProjectCardSchedings() {
                      canceled={(state) => stateCanceled(data.id, state)}                    
                    />
                </div>
-             )}
+             )} 
 
               </div>
             );
