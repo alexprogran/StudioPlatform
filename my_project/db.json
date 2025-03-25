@@ -34,6 +34,13 @@
       "time": "08:45",
       "professional": "Funcionário teste",
       "service": "Maquiagem"
+    },
+    {
+      "id": "7624",
+      "date": "2025-03-25",
+      "time": "09:56",
+      "professional": "Wesley",
+      "service": "corte de cabelo"
     }
   ],
   "categoria": [
