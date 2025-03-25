@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import { useState, useEffect} from 'react';
-=======
+
 import { useState } from 'react';
->>>>>>> develop
 import styles from './ProjectSwitch.module.css';
 import PropTypes from 'prop-types';
 
@@ -11,47 +8,13 @@ function ProjectSwitch({text_confirm, text_canceled, confirm, ok, canceled, annu
     const [switchConfirm, setSwitchConfirm] = useState(false);
     const [switchCanceled, setSwitchCanceled] = useState(false);
 
-<<<<<<< HEAD
-        if(ok) {
-            setSwitchConfirm((previous) => !previous);
-            confirm(!switchConfirm);          
-            
-        }else {
-            setSwitchCanceled((prev) => !prev);
-            canceled(!switchCanceled);
-        
-        
-        if(switchConfirm) {
-            setSwitchCanceled(false)
-        }
-        if(switchCanceled){
-            setSwitchConfirm(false)
-        }  
-       
-            
 
-        }} 
-        
-        
-    // useEffect( () => {
-    //     if(switchConfirm) {
-    //         setSwitchCanceled(false)
-    //     }
-    //     if(switchCanceled){
-    //         setSwitchConfirm(false)
-    //     }    
-    // },[switchConfirm,switchCanceled])
-     
-       
-=======
     const handleConfirmChange = () => {
         const changedState = !switchConfirm;
         setSwitchConfirm(changedState);
         setSwitchCanceled(false); 
         confirm(changedState);
         canceled(false);
->>>>>>> develop
-
     };
 
     const handleCanceledChange = () => {
