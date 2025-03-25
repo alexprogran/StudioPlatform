@@ -16,7 +16,7 @@ function ProjectFormScheduling() {
         professional: '',
         service: '',
     })
-    const [get, setGet] = useState(false);
+    const [getScheduling, setGetScheduling] = useState([]);
     const [message, setMessage] = useState(false)
     const [card, setCard] = useState('')
 
@@ -69,15 +69,17 @@ function ProjectFormScheduling() {
         })
         setMessage(true)  
         setCard('open')
-        setGet(true)
-    }  
+        setGetScheduling(() => [scheduling])
+    }
+
+    useEffect(() => {
+        console.log('GetScheduling: ', getScheduling)
+    },[getScheduling])
 
     useEffect(() => {
         if(message){
             setTimeout(() => {
                 setMessage(false)
-                
-                
             },3000)
         }
     },[message])
@@ -131,7 +133,7 @@ function ProjectFormScheduling() {
         </form>
        
         <div className={`${styles.card_container} ${card ==='open' ? styles.open:'' }`}>
-        <Card get={get} />
+        <Card get={getScheduling} />
         </div>
         
     </div>

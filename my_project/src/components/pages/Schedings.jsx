@@ -18,13 +18,9 @@ function Schedings() {
         <FaRegCalendarAlt className={styles.icons} />
         </div>
        
-       <ProjectCardSchedings />
-          
+            <ProjectCardSchedings />         
          
-    </div>
-    {/* <Footer visible={true} /> */}
- 
-
+         </div>
     </>
 }
 export default Schedings
