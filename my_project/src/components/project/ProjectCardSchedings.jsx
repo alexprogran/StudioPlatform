@@ -13,7 +13,7 @@ function ProjectCardSchedings() {
  
 
   useEffect(() => {
-    fetch('http://localhost:5000/scheduling', {
+    fetch('http://localhost:8000/api/scheduling/', {
       method: 'GET',
       headers: {
         'content-type': 'application/json'
