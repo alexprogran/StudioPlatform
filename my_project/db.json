@@ -1,5 +1,18 @@
 {
-  "scheduling": [],
+  "scheduling": [
+    {
+      "date" : "2025-03-30", 
+      "time": "12:00",
+      "professional": "Marira",
+      "service": "corte"
+    },
+    {
+      "date" : "2025-03-30", 
+      "time": "11:00",
+      "professional": "Marira",
+      "service": "Manicure"
+    }
+  ],
   "categoria": [
     {
       "id": "1",
