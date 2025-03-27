@@ -11,7 +11,6 @@ function ProjectCardSchedings() {
     console.log('objeto stateCard:', stateCards)
   },[stateCards])
  
-  // fetch('http://localhost:8000/api/scheduling/',
 
   useEffect(() => {
     fetch('http://localhost:5000/scheduling/', {
