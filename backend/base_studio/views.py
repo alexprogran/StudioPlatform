@@ -29,3 +29,4 @@ class FormLoginAPIView(APIView):
 class SchedulingViewSet(viewsets.ModelViewSet):
     queryset = SchedulingModel.objects.all()
     serializer_class = SchedulingSerializer
+    ordering = ['date']

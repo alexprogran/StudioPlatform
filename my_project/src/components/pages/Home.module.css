@@ -41,6 +41,7 @@ img.manicure{
 }
 
 .img_container img:hover {
+    cursor: pointer;
     transform: scale(1.1);    
 }
 

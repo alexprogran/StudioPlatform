@@ -4,13 +4,13 @@ from .models import FormLogin, SchedulingModel
 class FormLoginSerialzers(serializers.ModelSerializer):
     class Meta:
         model = FormLogin
-        fields = ['name', 'email', 'phone']
+        fields = ['id','name', 'email', 'phone']
 
 
 class SchedulingSerializer(serializers.ModelSerializer):
-    
+    time = serializers.TimeField(format="%H:%M")
+    date = serializers.DateField(format="%d/%m/%Y")
     class Meta:
         model  = SchedulingModel
-        fields = ['date', 'time', 'professional', 'service' ]
-
+        fields = ['id','date', 'time', 'professional', 'service' ]
 
