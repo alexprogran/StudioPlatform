@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import Container from "../layout/Container"
 import styles from './Services.module.css';
 import PropTypes from 'prop-types';
-import { Link } from "react-router";
 import Footer from "../layout/Footer";
 
 function Services() {

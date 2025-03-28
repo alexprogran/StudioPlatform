@@ -4,12 +4,10 @@ import styles from './ProjectSidBar.module.css';
 import PropTypes from 'prop-types';
 
 
-function ProjectSideBar({closed}) {   
-    
+function ProjectSideBar({closed}) {  
    
     return <>
-        <div className={styles.sidebar_container}>
-                 
+        <div className={styles.sidebar_container}>                 
 
             <div className={styles.icon_container} >
                  <IoClose className={styles.icon} onClick={() => closed('')}  />

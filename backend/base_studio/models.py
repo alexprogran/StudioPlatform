@@ -10,6 +10,7 @@ class FormLogin(models.Model):
 
 
 class SchedulingModel(models.Model):
+
     date = models.DateField()
     time = models.TimeField()
     professional = models.CharField(max_length=100)
