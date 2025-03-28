@@ -1,48 +1,5 @@
 {
-  "scheduling": [
-    {
-      "id": "a23e",
-      "date": "2025-03-17",
-      "time": "16:10",
-      "professional": "Paty",
-      "service": "Maquiagem"
-    },
-    {
-      "id": "d41f",
-      "date": "2025-03-18",
-      "time": "10:12",
-      "professional": "Wesley",
-      "service": "Maquiagem"
-    },
-    {
-      "id": "fc10",
-      "date": "2025-03-18",
-      "time": "10:13",
-      "professional": "Marley Gomes",
-      "service": "corte de cabelo"
-    },
-    {
-      "id": "35a2",
-      "date": "2025-03-18",
-      "time": "10:14",
-      "professional": "Luandila Torres",
-      "service": "corte de cabelo"
-    },
-    {
-      "id": "0153",
-      "date": "2025-03-25",
-      "time": "08:45",
-      "professional": "Funcionário teste",
-      "service": "Maquiagem"
-    },
-    {
-      "id": "7624",
-      "date": "2025-03-25",
-      "time": "09:56",
-      "professional": "Wesley",
-      "service": "corte de cabelo"
-    }
-  ],
+  "scheduling": [],
   "categoria": [
     {
       "id": "1",

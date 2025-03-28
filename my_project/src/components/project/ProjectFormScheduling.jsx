@@ -38,7 +38,7 @@ function ProjectFormScheduling() {
 
     function createPost(scheduling) {
 
-        fetch('http://localhost:5000/scheduling',{
+        fetch('http://localhost:8000/api/scheduling/',{
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -107,7 +107,7 @@ function ProjectFormScheduling() {
             type='time'
             text='Informe o horário'
             handleOnChange={handleOnChange}
-            value={scheduling.time || ""}
+            value={scheduling.time || ""} 
             />
             <Inputs 
             name='professional'

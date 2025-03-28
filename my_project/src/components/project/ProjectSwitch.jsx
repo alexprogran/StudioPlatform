@@ -35,14 +35,12 @@ function ProjectSwitch({text_confirm, text_canceled, confirm, ok, canceled, annu
                 `}>
 
                     {ok && (
-                        <input
-                            
+                        <input                            
                             type="checkbox"
                             checked={switchConfirm}
                             onChange={handleConfirmChange}
                         />
                     )}
-
 
                     {annulled && (
                         <input

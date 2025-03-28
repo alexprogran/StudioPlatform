@@ -9,9 +9,6 @@
     border-bottom: 1px solid rgb(182, 125, 39);  
 }
 
-.open {
-    transform: translateX(0);
-}
 
 .navibar {   
     display: flex;
@@ -56,7 +53,6 @@
 }
 
 .sidebar_moble {
-    visibility: hidden;
     position:absolute;
     left: 0;
     margin-bottom: 0;
@@ -65,10 +61,11 @@
     padding: 0;
     top: 100%; 
     transform: translateX(-100%);
-    transition: transform 0.5s;
+    transition: transform 0.5s  ease-in-out, opacity 0.5s ease-in-out;
     z-index: 1      
    
 }
+
 .open {
    visibility: visible;
     transform: translateX(0);

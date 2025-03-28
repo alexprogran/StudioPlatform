@@ -13,7 +13,8 @@ function ProjectCardSchedings() {
  
 
   useEffect(() => {
-    fetch('http://localhost:5000/scheduling/', {
+    fetch('http://localhost:8000/api/scheduling/', {
+
       method: 'GET',
       headers: {
         'content-type': 'application/json'
@@ -54,7 +55,7 @@ function ProjectCardSchedings() {
     <div className={styles.container}>
       {schedingChunks.map((chunk, index) => (
         <div key={index} className={styles.list_schedings}>
-          
+          {console.log('Sublista: ',chunk)}
           {chunk.map((data) => {
             const stateCard = stateCards[data.id] || {};
             return (
