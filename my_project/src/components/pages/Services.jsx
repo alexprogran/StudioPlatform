@@ -6,25 +6,12 @@ import { Link } from "react-router";
 import Footer from "../layout/Footer";
 
 function Services() {
-    const [categories, setCategories] = useState([])
     
-    useEffect(() => {
-        fetch('http://localhost:5000/categoria')
-        .then((resp) => resp.json())
-        .then((data) => setCategories(data))
-        .catch((err) => console.log(err))        
-    }, [])
     return <>
     <Container customClass='content-center'>
         <div className={styles.services_container}>
-        <h1>Nossos serviços!</h1>
-        <p>Acesse abaixo a lista de todos os nosso seviços.</p>
-    
-            <ul>
-                {categories.map((categoria) => (
-                    <li key={categoria.id}><Link to='#'>{categoria.nome}</Link></li>
-                ))}
-            </ul>
+        <h1>Em breve os nossos serviços!</h1>
+        <p>Área para implementar serviços</p>              
             <Footer visible={true} />
         </div>
 
