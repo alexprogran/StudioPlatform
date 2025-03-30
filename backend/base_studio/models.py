@@ -15,6 +15,8 @@ class SchedulingModel(models.Model):
     time = models.TimeField()
     professional = models.CharField(max_length=100)
     service = models.CharField(max_length=100)
+    confirm = models.BooleanField(default=False)
+    canceled = models.BooleanField(default=False)
 
     def __str__(self):
         return self.service

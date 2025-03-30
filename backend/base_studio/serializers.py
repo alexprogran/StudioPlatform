@@ -12,5 +12,13 @@ class SchedulingSerializer(serializers.ModelSerializer):
     date = serializers.DateField(format="%d/%m/%Y")
     class Meta:
         model  = SchedulingModel
-        fields = ['id','date', 'time', 'professional', 'service' ]
+        fields = [
+            'id',
+            'date',
+            'time',
+            'professional',
+            'service',
+            'confirm',
+            'canceled',
+            ]
 
