@@ -19,6 +19,7 @@ class SchedulingSerializer(serializers.ModelSerializer):
             'professional',
             'service',
             'confirm',
+            
             'canceled',
             ]
 

@@ -1,30 +1,43 @@
 import styles from './ProjectCardSchedings.module.css';
 import ProjectSwitch from './ProjectSwitch';
-import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
+
+
+
 
 function ProjectCardSchedings() {
   const [scheding, setScheding] = useState([]);
   const [stateCards, setStateCard] = useState({}); 
 
-  useEffect(() => {
-    console.log('objeto stateCard:', stateCards)
-  },[stateCards])
+  // useEffect(() => {
+  //   console.log('objeto stateCard:', stateCards)
+  // },[stateCards])
  
+  // useEffect(() => {
+  //   console.log('Retorno do API (agendamento): ',scheding)
+  //  },[stateCards])
 
-  useEffect(() => {
-    fetch('http://localhost:8000/api/scheduling/', {
+  
+  
 
-      method: 'GET',
+    
+  useEffect(() => {  
+   
+    console.log(" Dados enviados para a API:", JSON.stringify(stateCards, null, 2)); 
+
+    fetch("http://localhost:8000/api/scheduling/update_multiple/", {
+      method: 'PATCH',
       headers: {
-        'content-type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(stateCards ) //  Enviando como objeto
     })
-      .then((request) => request.json())
-      .then((data) => {
-        setScheding(data);
-      });
-  }, []);
+    .then(response => response.json())
+    .then(data => console.log(" Resposta da API:", data))
+    .catch(error => console.error(" Erro ao atualizar:", error));
+
+}, [stateCards]);
+
 
   const stateConfirm = (id, status) => {
     setStateCard((previous) => ({
@@ -57,7 +70,7 @@ function ProjectCardSchedings() {
         <div key={index} className={styles.list_schedings}>
           {console.log('Sublista: ',chunk)}
           {chunk.map((data) => {
-            const stateCard = stateCards[data.id] || {};
+            const stateCard = stateCards[data.id] || scheding.find(itens => itens.id === data.id);
             return (
               <div
                 key={data.id}
@@ -74,13 +87,14 @@ function ProjectCardSchedings() {
                 <p>Procedimento: {data.service}</p>
                 <p>Profissional: {data.professional}</p>
 
-                {!stateCard.canceled && (
+                  {!stateCard.canceled && (
                    <div className={styles.position_confirm}>
                    <ProjectSwitch
-                     ok={true}
-                     text_confirm='Confirmado'
-                     confirm={(state) => stateConfirm(data.id, state)}
-                     canceled={(state) => stateCanceled(data.id, state)}                   
+                    stateSwitch_confirm = {scheding.find(itens => itens.id === data.id)?.confirm || false}
+                    ok={true}
+                    text_confirm='Confirmado'
+                    confirm={(state) => stateConfirm(data.id, state)}
+                    canceled={(state) => stateCanceled(data.id, state)}                   
                    />               
                </div>
                 )}
@@ -88,10 +102,11 @@ function ProjectCardSchedings() {
              {!stateCard.confirm && (
                <div className={styles.position_canceled}>
                <ProjectSwitch
-                     annulled={true}
-                     text_canceled='Cancelado'
-                     confirm={(state) => stateConfirm(data.id, state)}
-                     canceled={(state) => stateCanceled(data.id, state)}                    
+                  stateSwitch_canceled = {scheding.find(itens => itens.id === data.id)?.canceled || false}
+                  annulled={true}
+                  text_canceled='Cancelado'
+                  confirm={(state) => stateConfirm(data.id, state)}
+                  canceled={(state) => stateCanceled(data.id, state)}                    
                    />
                </div>
              )} 
@@ -107,6 +122,3 @@ function ProjectCardSchedings() {
 
 export default ProjectCardSchedings;
 
-ProjectCardSchedings.propTypes = {
-  list: PropTypes.func
-};

@@ -14,7 +14,7 @@ class FormLoginAdmin(admin.ModelAdmin):
    
 @admin.register(SchedulingModel)
 class ShedulingAdmin(admin.ModelAdmin):
-    list_display = ('date', 'time', 'professional', 'service', 'confirm','canceled')
+    list_display = ('id','date', 'time', 'professional', 'service', 'confirm','canceled')
     search_fields = ('date',)
     list_filter = ('date',)
   
