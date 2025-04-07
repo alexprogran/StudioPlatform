@@ -22,6 +22,7 @@
     color:  rgb(255, 69, 69);
     font-size: 17px;
     top: -35px;
+
 }
 
 .container_switch input{
@@ -93,8 +94,9 @@
 
 .canceled span {
     background-color: rgb(247, 110, 110);
-    top: -27px;
-    
+    /* top: -27px; */
+   top: 0;
+
     
 }
 

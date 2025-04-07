@@ -17,7 +17,19 @@ function ProjectCardSchedings() {
   //   console.log('Retorno do API (agendamento): ',scheding)
   //  },[stateCards])
 
-  
+  useEffect(() => {
+    fetch('http://localhost:8000/api/scheduling/', {
+
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then((request) => request.json())
+      .then((data) => {
+        setScheding(data);
+      });
+  }, []);
   
 
     
@@ -30,7 +42,7 @@ function ProjectCardSchedings() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(stateCards ) //  Enviando como objeto
+      body: JSON.stringify(stateCards) //  Enviando como objeto
     })
     .then(response => response.json())
     .then(data => console.log(" Resposta da API:", data))
@@ -81,7 +93,9 @@ function ProjectCardSchedings() {
                     ? styles.canceled
                     : ''
                 }`}
-              >
+              > 
+                <p>confirm: {Boolean(stateCard.confirm || false)}</p>
+
                 <h3>{data.time}</h3>
                 <p>Data: {data.date}</p>
                 <p>Procedimento: {data.service}</p>

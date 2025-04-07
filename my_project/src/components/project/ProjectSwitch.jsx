@@ -32,19 +32,16 @@ function ProjectSwitch({
             setSwitchConfirm(false);
             setPesistConfirm(false);
         }
-    }, []);
+    }, [stateSwitch_confirm, stateSwitch_canceled]);
     
-
-
-
-
+    
 
     // useEffect(() => {
     //     if(stateSwitch_confirm){ 
     //         if(pesistCanceled === false){
     //             setSwitchConfirm(stateSwitch_confirm );
     //             setPesistConfirm(stateSwitch_confirm); 
-    //             stateSwitch_confirm === false;  
+               
     //         }        
     //     }
        
@@ -57,7 +54,7 @@ function ProjectSwitch({
            
     //     }     
        
-    // },[] );
+    // },[stateSwitch_canceled, stateSwitch_confirm] );
     
 
     // useEffect(() => {
