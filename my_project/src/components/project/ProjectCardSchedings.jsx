@@ -9,13 +9,6 @@ function ProjectCardSchedings() {
   const [scheding, setScheding] = useState([]);
   const [stateCards, setStateCard] = useState({}); 
 
-  // useEffect(() => {
-  //   console.log('objeto stateCard:', stateCards)
-  // },[stateCards])
- 
-  // useEffect(() => {
-  //   console.log('Retorno do API (agendamento): ',scheding)
-  //  },[stateCards])
 
   useEffect(() => {
     fetch('http://localhost:8000/api/scheduling/', {
@@ -42,7 +35,7 @@ function ProjectCardSchedings() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(stateCards) //  Enviando como objeto
+      body: JSON.stringify(stateCards) 
     })
     .then(response => response.json())
     .then(data => console.log(" Resposta da API:", data))
@@ -93,15 +86,12 @@ function ProjectCardSchedings() {
                     ? styles.canceled
                     : ''
                 }`}
-              > 
-                <p>confirm: {Boolean(stateCard.confirm || false)}</p>
-
+              >           
                 <h3>{data.time}</h3>
                 <p>Data: {data.date}</p>
                 <p>Procedimento: {data.service}</p>
                 <p>Profissional: {data.professional}</p>
-
-                  {!stateCard.canceled && (
+              
                    <div className={styles.position_confirm}>
                    <ProjectSwitch
                     stateSwitch_confirm = {scheding.find(itens => itens.id === data.id)?.confirm || false}
@@ -110,23 +100,10 @@ function ProjectCardSchedings() {
                     confirm={(state) => stateConfirm(data.id, state)}
                     canceled={(state) => stateCanceled(data.id, state)}                   
                    />               
-               </div>
-                )}
-                
-             {!stateCard.confirm && (
-               <div className={styles.position_canceled}>
-               <ProjectSwitch
-                  stateSwitch_canceled = {scheding.find(itens => itens.id === data.id)?.canceled || false}
-                  annulled={true}
-                  text_canceled='Cancelado'
-                  confirm={(state) => stateConfirm(data.id, state)}
-                  canceled={(state) => stateCanceled(data.id, state)}                    
-                   />
-               </div>
-             )} 
-
+               </div>                 
+             
               </div>
-            );
+            )
           })}
         </div>
       ))}

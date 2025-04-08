@@ -1,6 +1,3 @@
-/* .container_switch {
-    position: relative;   
-} */
 
 .container_switch p{
     
@@ -17,13 +14,6 @@
     
 
 } 
-
-.container_switch .red {
-    color:  rgb(255, 69, 69);
-    font-size: 17px;
-    top: -35px;
-
-}
 
 .container_switch input{
     position: absolute;
@@ -46,10 +36,7 @@
     margin-left: 50px;
 }
 
-.p_absolut_canceld {
-    margin-top:-2px;
-    margin-left: 50px;
-}
+
 
 .container_switch span::before {
     content: '';
@@ -92,18 +79,8 @@
     
 }
 
-.canceled span {
-    background-color: rgb(247, 110, 110);
-    /* top: -27px; */
-   top: 0;
 
-    
-}
 
-.canceled span::before {
-    border: 3px solid rgb(227, 54, 54);
-    transform: translateX(100%);
-}
 
 
 
