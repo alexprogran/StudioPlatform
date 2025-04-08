@@ -6,8 +6,10 @@ Page home
 
 # 
 Cadastrando usuário
+
 ![Home](my_project/src/assets/contact.png)
 
 # 
-Cadastrando usuário
-![Home](src/assets/scheduling.png)
+Fomulário para agendamento
+
+![Home](my_project/src/assets/scheduling.png)
