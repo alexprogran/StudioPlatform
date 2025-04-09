@@ -34,6 +34,8 @@ Uma plataforma moderna para gerenciamento e agendamento de sessões de cuidados 
 Antes de começar, certifique-se de ter instalado:
 - Node.js (v18 ou superior)
 - npm ou yarn
+- Python
+- pip
 - Git
 
 ## 🚀 Começando
@@ -41,7 +43,7 @@ Antes de começar, certifique-se de ter instalado:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/yourusername/StudioPlatform.git
+git clone https://github.com/alexprogran/StudioPlatform.git
 ```
 
 2. Instale as dependências:
@@ -51,6 +53,15 @@ npm install
 # ou
 yarn install
 ```
+```bash
+pip install django
+django-restframeworke
+django-cors-headers
+```
+
+
+
+
 
 3. Configure as variáveis de ambiente:
 Crie um arquivo `.env.local` na raiz do projeto e adicione suas credenciais do Supabase:
