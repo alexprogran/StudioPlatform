@@ -6,6 +6,6 @@ A home
 Cadastrando dados do usuário
 ![contact](src/assets/contact.png)
 
-Formulario para agendamento
-![contact](src/assets/sheduling.png)
+Formulario de agendamento
+![contact](src/assets/scheduling.png)
 

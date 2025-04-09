@@ -18,8 +18,8 @@ function Alert({msg,type}) {
         },100);       
         return () => clearTimeout(timer);
        
-    },[visible]);
-    
+    },[]);
+     
     
     return <>
     

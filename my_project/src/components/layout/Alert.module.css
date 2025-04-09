@@ -27,7 +27,7 @@
 
 .invisible {
    
-    transform: translateX(0);
+    transform: translateX(0); 
 }
 
 .visible {
