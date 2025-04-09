@@ -1,20 +1,30 @@
 # PlatiformStudio
 
-Uma plataforma moderna para gerenciamento e agendamento de sessões de estúdio, construída com Next.js, TypeScript e Supabase.
+Uma plataforma moderna para gerenciamento e agendamento de sessões de cuidados e estética. Construída com React e django.
 
 ## 🚀 Funcionalidades
 
-- **Autenticação de Usuários**: Sistema seguro de login e registro
-- **Gerenciamento de Estúdios**: Crie e gerencie espaços de estúdio
-- **Sistema de Agendamento**: Reserve e gerencie sessões de estúdio
-- **Atualizações em Tempo Real**: Atualizações ao vivo para reservas e disponibilidade
-- **Design Responsivo**: Funciona perfeitamente em desktop e dispositivos móveis
+- **Home**:
+
+![Home](my_project/src/assets/home.png)
+
+- **Autenticação de Usuários**: 
+
+![Contact](my_project/src/assets/contact.png)
+
+- **Agendameno com a equipe**
+
+![Scheduling](my_project/src/assets/scheduling.png)
+
+- **Centralização dos agendamentos e atualizados em tampo real**
+
+![fullScheduling](my_project/src/assets/fullScheduling.png)
+
 
 ## 🛠️ Stack Tecnológica
 
-- **Frontend**: Next.js 13+, TypeScript, Tailwind CSS
-- **Backend**: Supabase
-- **Autenticação**: Supabase Auth
+- **Frontend**: React, 
+- **Backend**: Django,
 - **Banco de Dados**: PostgreSQL (via Supabase)
 - **Estilização**: Tailwind CSS, Shadcn UI
 - **Gerenciamento de Estado**: React Query
@@ -158,22 +168,19 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 Para suporte, por favor abra uma issue no repositório do GitHub ou entre em contato com os mantenedores.
 
 
-Page home
 
-![Home](my_project/src/assets/home.png)
 
-# 
-Cadastrando usuário
 
-![Contact](my_project/src/assets/contact.png)
 
-# 
-Fomulário para agendamento
 
-![Scheduling](my_project/src/assets/scheduling.png)
 
-##
-Agendamentos registrados
 
-![fullScheduling](my_project/src/assets/fullScheduling.png)
+
+
+
+
+
+
+
+
 
