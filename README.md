@@ -33,15 +33,15 @@ Uma plataforma moderna para gerenciamento e agendamento de sessões de cuidados 
 
 Antes de começar, certifique-se de ter instalado:
 - Node.js (v18 ou superior)
-- npm ou yarn
-- Git
+- Python
+
 
 ## 🚀 Começando
 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/yourusername/StudioPlatform.git
+git clone https://github.com/alexprogran/StudioPlatform.git
 ```
 
 2. Instale as dependências:
@@ -51,14 +51,11 @@ npm install
 # ou
 yarn install
 ```
+```bash
+pip install -r requirements.txt
 
-3. Configure as variáveis de ambiente:
-Crie um arquivo `.env.local` na raiz do projeto e adicione suas credenciais do Supabase:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=sua_url_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anonima_supabase
 ```
+
 
 4. Execute o servidor de desenvolvimento:
 
@@ -68,104 +65,59 @@ npm run dev
 yarn dev
 ```
 
-5. Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver a aplicação.
+```bash
+pyton manage.py run server
+```
+5. Abra no seu navegador
+- [http://localhost:5173] (React)
+- [http://localhost:3000] (Django)  
+    
+
+
 
 ## 📁 Estrutura do Projeto
 
 ```
-├── app/                # Diretório app do Next.js 13+
-├── components/        # Componentes React reutilizáveis
-├── lib/              # Funções utilitárias e helpers
-├── public/           # Arquivos estáticos
-└── types/            # Definições de tipos TypeScript
+├── README.md
+├── backend
+│   ├── base_studio
+│   ├── db.sqlite3
+│   ├── manage.py
+│   ├── requirements.txt
+│   ├── studio_backend
+│   └── venv
+└── my_project
+    ├── README.md
+    ├── db.json
+    ├── eslint.config.js
+    ├── index.html
+    ├── node_modules
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+    ├── src
+    └── vite.config.js
+
 ```
 
-## 🔐 Autenticação
 
-A plataforma utiliza Supabase Authentication para gerenciamento de usuários. Recursos incluem:
-- Autenticação por email/senha
-- Rotas protegidas
-- Gerenciamento de perfil de usuário
 
 ## 📊 Esquema do Banco de Dados
 
 A plataforma utiliza as seguintes tabelas principais:
-- Usuários
-- Estúdios
-- Reservas
-- Avaliações
-- Pagamentos
+- FormLogin
+- SchedulingModel
 
-## 🛡️ Segurança
-
-- Políticas de Row Level Security (RLS) no Supabase
-- Rotas de API protegidas
-- Validação e sanitização de entrada
-- Fluxo seguro de autenticação
-
-## 🎨 Componentes de UI
-
-A plataforma utiliza uma combinação de componentes personalizados e Shadcn UI para:
-- Formulários e inputs
-- Navegação
-- Modais e diálogos
-- Cards e layouts
-- Estados de carregamento
-
-## 📱 Design Responsivo
-
-A plataforma é totalmente responsiva e funciona em:
-- Computadores desktop
-- Tablets
-- Dispositivos móveis
-
-## 🔄 Gerenciamento de Estado
-
-- React Query para estado do servidor
-- React Context para estado global da aplicação
-- Estado local com useState e useReducer
-
-## 🧪 Testes
-
-Para executar os testes:
-
-```bash
-npm run test
-# ou
-yarn test
-```
-
-## 📦 Implantação
-
-A aplicação pode ser implantada em várias plataformas:
-- Vercel (recomendado)
-- Netlify
-- Servidor personalizado
-
-## 🤝 Contribuindo
-
-1. Faça um fork do repositório
-2. Crie uma nova branch
-3. Faça suas alterações
-4. Envie um pull request
 
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 👥 Autores
 
-- Alex Pro Gran - Trabalho inicial e manutenção
 
-## 🙏 Agradecimentos
 
-- Obrigado a todos os contribuidores
-- Shadcn UI pela biblioteca de componentes
-- Equipe Supabase pela infraestrutura de backend
 
-## 📞 Suporte
 
-Para suporte, por favor abra uma issue no repositório do GitHub ou entre em contato com os mantenedores.
 
 
 
