@@ -1,6 +1,6 @@
 # PlatiformStudio
 
-Uma plataforma moderna para gerenciamento e agendamento de sessões de cuidados e estética. Construída com React e django.
+Plataforma para gerenciamento e agendamento de sessões de cuidados e estética. Construída com React e django.
 
 ## 🚀 Funcionalidades
 
@@ -26,15 +26,13 @@ Uma plataforma moderna para gerenciamento e agendamento de sessões de cuidados 
 - **Frontend**: React, 
 - **Backend**: Django,
 - **Banco de Dados**: PostgreSQL (via Supabase)
-- **Estilização**: Tailwind CSS, Shadcn UI
-- **Gerenciamento de Estado**: React Query
+
 
 ## 📋 Pré-requisitos
 
 Antes de começar, certifique-se de ter instalado:
 - Node.js (v18 ou superior)
 - Python
-
 
 ## 🚀 Começando
 
@@ -51,6 +49,7 @@ npm install
 # ou
 yarn install
 ```
+
 ```bash
 pip install -r requirements.txt
 
